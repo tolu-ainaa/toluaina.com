@@ -1,0 +1,66 @@
+---
+// A quiet box labelled "Photos". Move the cursor across it and photos surface under the pointer,
+// each fading out as you move on. On touch screens a tap reveals the next one.
+// Images come from public/media/photos (see media-source/encode-photos.py).
+import { readdirSync } from 'node:fs';
+import { join } from 'node:path';
+
+interface Props { label?: string; hint?: string }
+const { label = 'Photos', hint } = Astro.props;
+
+let photos: string[] = [];
+try {
+  photos = readdirSync(join(process.cwd(), 'public', 'media', 'photos'))
+    .filter(f => /\.(jpe?g|png|webp)$/i.test(f)).sort()
+    .map(f => `/media/photos/${f}`);
+} catch {}
+---
+{photos.length > 0 && (
+  <div class="photo-trail" data-photos={JSON.stringify(photos)} role="img" aria-label={`${label}: ${photos.length} photos from events and studio work`} tabindex="0">
+    <span class="pt-label">{label}</span>
+    <span class="pt-hint pt-hint--fine">{hint ?? `${photos.length} photos · move across to reveal`}</span>
+    <span class="pt-hint pt-hint--coarse">{hint ?? `${photos.length} photos · tap to reveal`}</span>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll<HTMLElement>('.photo-trail').forEach(box => {
+    const srcs: string[] = JSON.parse(box.dataset.photos || '[]');
+    if (!srcs.length) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const coarse = matchMedia('(pointer: coarse)').matches;
+    let i = 0, lastX = 0, lastY = 0, loaded = false;
+
+    const preload = () => { if (loaded) return; loaded = true; srcs.forEach(s => { const im = new Image(); im.src = s; }); };
+    const io = 'IntersectionObserver' in window ? new IntersectionObserver(e => { if (e[0].isIntersecting) { preload(); io!.disconnect(); } }) : null;
+    io ? io.observe(box) : preload();
+
+    function spawn(x: number, y: number, hold: number) {
+      const img = document.createElement('img');
+      img.src = srcs[i++ % srcs.length]; img.alt = ''; img.className = 'pt-img';
+      img.style.left = x + 'px'; img.style.top = y + 'px';
+      img.style.setProperty('--r', (Math.random() * 10 - 5).toFixed(1) + 'deg');
+      box.appendChild(img);
+      requestAnimationFrame(() => img.classList.add('is-in'));
+      setTimeout(() => { img.classList.remove('is-in'); img.classList.add('is-out'); setTimeout(() => img.remove(), reduce ? 0 : 500); }, hold);
+      box.classList.add('is-active');
+    }
+    const local = (e: PointerEvent) => { const r = box.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+
+    box.addEventListener('pointermove', e => {
+      if (coarse) return;
+      const [x, y] = local(e);
+      if (Math.hypot(x - lastX, y - lastY) < 48) return;   // one photo every ~48px of travel
+      lastX = x; lastY = y; spawn(x, y, 700);
+    });
+    box.addEventListener('pointerenter', e => { if (!coarse) { const [x, y] = local(e); lastX = x; lastY = y; spawn(x, y, 700); } });
+    box.addEventListener('pointerleave', () => box.classList.remove('is-active'));
+    box.addEventListener('pointerdown', e => {                         // touch: a tap reveals the next photo
+      if (!coarse) return; e.preventDefault(); const [x, y] = local(e); spawn(x, y, 1600);
+    });
+    box.addEventListener('keydown', e => {                              // keyboard: Enter/Space steps through
+      if (e.key !== 'Enter' && e.key !== ' ') return; e.preventDefault();
+      spawn(box.clientWidth / 2, box.clientHeight / 2, 1600);
+    });
+  });
+</script>
