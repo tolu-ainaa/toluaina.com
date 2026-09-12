@@ -15,7 +15,7 @@ button { font: inherit; cursor: pointer; }
 /* ---------- header: brand + thesis + menu button ---------- */
 .top {
   position: fixed; inset: 0 0 auto 0; z-index: 20; height: var(--header-h);
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 28px;
+  display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 28px;
   color: var(--mist); pointer-events: none;
 }
 /* Frosted ground under the header text: a blurred, lightly tinted band that dissolves at its bottom edge,
