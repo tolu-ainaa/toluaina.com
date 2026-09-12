@@ -25,7 +25,7 @@ const motionLoop = loops.motion ?? null;
         ? <video muted playsinline loop autoplay preload="auto" poster={motionLoop.poster} aria-hidden="true"><source src={motionLoop.src} type="video/mp4" /></video>
         : <canvas id="cv-motion" aria-hidden="true"></canvas>}
       <ul class="stack" aria-label="Motion stack">
-        {['After Effects', 'Illustrator', 'Figma', 'Blender', '2D / 3D', '24 fps', '500+ videos shipped'].map(t => <li>{t}</li>)}
+        {['After Effects', 'Illustrator', 'Figma', 'Blender', '2D / 3D', '500+ videos shipped'].map(t => <li>{t}</li>)}
       </ul>
       <div class="eyebrow">/motion</div>
       <h2>Motion</h2>

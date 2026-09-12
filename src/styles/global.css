@@ -35,18 +35,23 @@ body[data-view="motion"] .top::before { background: linear-gradient(to bottom, r
    Fork on desktop: brand and thesis sit over the XR (navy) half, the menu button over the Motion (yolk) half;
    when the Motion half is hovered it grows past the centre, so the thesis flips to ink. */
 body[data-view="motion"] .top { color: var(--ink); }
-body[data-view="home"] .top .menu-btn { color: var(--ink); }
-body[data-view="home"][data-hover="motion"] .top .thesis { color: var(--ink); }
 .top > * { pointer-events: auto; }
 .brand { display: flex; flex-direction: column; gap: 1px; text-decoration: none; }
 .brand b { font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: .01em; white-space: nowrap; }
 .brand span { font-size: 12px; opacity: .8; }
-.thesis { font-style: italic; font-size: 14px; opacity: .9; text-align: center; white-space: nowrap; }
+.thesis {
+  font-style: italic; font-size: 14px; text-align: center; white-space: nowrap; color: var(--mist);
+  padding: 6px 14px; border-radius: 999px; background: rgba(21,18,14,.38);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
+}
+body[data-view="motion"] .thesis { color: var(--ink); background: rgba(21,18,14,.07); }
 .menu-btn {
   justify-self: end; display: inline-flex; align-items: center; gap: 10px;
-  background: none; border: 1px solid currentColor; border-radius: 999px; color: inherit;
+  border: 0; border-radius: 999px; color: var(--mist); background: rgba(21,18,14,.38);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
   padding: 8px 14px; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
 }
+body[data-view="motion"] .menu-btn { color: var(--ink); background: rgba(21,18,14,.07); }
 .menu-btn i { display: inline-block; width: 16px; height: 10px; border-top: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; }
 
 /* ---------- menu overlay ---------- */
@@ -104,11 +109,11 @@ body[data-view="home"] { height: 100vh; height: 100dvh; overflow: hidden; }   /*
   display: flex; flex-wrap: wrap; gap: 6px;
 }
 .panel .stack li {
-  font-family: var(--mono); font-size: 11px; letter-spacing: .04em; padding: 5px 9px; border-radius: 999px;
-  background: rgba(21,18,14,.72); border: 1px solid rgba(255,255,255,.14);
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .04em; padding: 5px 10px; border-radius: 999px;
+  background: rgba(21,18,14,.34);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
 }
-.panel--xr .stack li { color: var(--signal); background: rgba(12,18,34,.74); border-color: rgba(93,139,255,.35); }
+.panel--xr .stack li { color: var(--signal); background: rgba(12,18,34,.38); }
 .panel--motion .stack li { color: var(--yolk); }
 .panel--xr .stack li:nth-child(-n+5), .panel--motion .stack li:nth-child(-n+4) { color: var(--mist); }   /* tools bright, context quieter */
 .panel--motion .stack li:nth-child(-n+4) { color: var(--paper); }
@@ -201,7 +206,6 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
 
 @media (max-width: 860px) {
   .top { grid-template-columns: 1fr auto; padding: 0 20px; }
-  body[data-view="home"] .top .menu-btn { color: var(--mist); }   /* XR (navy) is on top on phones */
   .thesis { display: none; }
   .brand span { display: none; }
   .fork { flex-direction: column; }
