@@ -1,0 +1,31 @@
+---
+// A small dot that trails the pointer. Yolk on the XR side of the site, navy on the Motion side.
+// Fine pointers only; never on touch, never with reduced motion. The native cursor stays.
+---
+<div class="cursor" aria-hidden="true"></div>
+
+<script>
+  const dot = document.querySelector<HTMLElement>('.cursor')!;
+  const fine = matchMedia('(pointer: fine)').matches;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (fine && !reduce) {
+    let tx = -100, ty = -100, x = tx, y = ty, shown = false, raf = 0;
+    const ease = 0.22;   // lag: lower is lazier
+    const tick = () => {
+      x += (tx - x) * ease; y += (ty - y) * ease;
+      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      if (Math.abs(tx - x) > .1 || Math.abs(ty - y) > .1) raf = requestAnimationFrame(tick); else raf = 0;
+    };
+    addEventListener('pointermove', (e) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) { x = tx; y = ty; shown = true; dot.classList.add('is-on'); }
+      if (!raf) raf = requestAnimationFrame(tick);
+      const t = e.target as HTMLElement | null;
+      dot.classList.toggle('is-link', !!t?.closest('a, button, [role="button"], .chip, .panel'));
+    }, { passive: true });
+    addEventListener('pointerdown', () => dot.classList.add('is-down'));
+    addEventListener('pointerup', () => dot.classList.remove('is-down'));
+    document.addEventListener('mouseleave', () => dot.classList.remove('is-on'));
+    document.addEventListener('mouseenter', () => { if (shown) dot.classList.add('is-on'); });
+  }
+</script>

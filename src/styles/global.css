@@ -360,3 +360,17 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
 @media (max-width: 860px) { .video-grid--mixed { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; } }
 .video-grid--portrait { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 860px) { .video-grid--portrait { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+
+/* ---------- cursor dot ---------- */
+:root { --cursor: var(--yolk); }                         /* dark grounds: XR, About, Contact */
+body[data-view="motion"] { --cursor: var(--navy); }      /* paper ground */
+body[data-view="home"][data-hover="motion"] { --cursor: var(--navy); }
+.cursor {
+  position: fixed; left: 0; top: 0; z-index: 60; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--cursor); pointer-events: none; opacity: 0; will-change: transform;
+  transition: width .25s var(--ease-out), height .25s var(--ease-out), opacity .2s, background-color .3s;
+}
+.cursor.is-on { opacity: 1; }
+.cursor.is-link { width: 34px; height: 34px; opacity: .55; }
+.cursor.is-down { width: 8px; height: 8px; opacity: 1; }
+@media (pointer: coarse), (prefers-reduced-motion: reduce) { .cursor { display: none; } }

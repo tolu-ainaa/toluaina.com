@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Header from '../components/Header.astro';
+import Cursor from '../components/Cursor.astro';
 import site from '../data/site.json';
 
 interface Props {
@@ -33,6 +34,7 @@ const { title, description, view } = Astro.props;
   <body data-view={view}>
     <Header view={view} />
     <slot />
+    <Cursor />
     {view !== 'home' && <a class="fab" href="/" aria-label="Back to main page">← Main page</a>}
     <script>
       // Move the repeat-visitor flag from <html> (set pre-paint) onto <body>, where the tokens read it.
