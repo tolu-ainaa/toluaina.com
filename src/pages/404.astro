@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Not found · Tolu Aina" description="That page does not exist." view="contact">
+  <section class="section section--plain" aria-labelledby="h-404">
+    <div class="sec-head"><div><h1 id="h-404">Not found</h1><p>That page does not exist, or it moved. The work is one click away on either side of the fork.</p></div></div>
+    <div class="sec-foot">
+      <div>
+        <h4>Go to</h4>
+        <div class="links"><a href="/">The fork</a><a href="/xr">XR</a><a href="/motion">Motion</a><a href="/about">About</a><a href={`mailto:${site.email}`}>{site.email}</a></div>
+      </div>
+    </div>
+  </section>
+</Base>
