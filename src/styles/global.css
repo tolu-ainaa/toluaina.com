@@ -39,12 +39,6 @@ body[data-view="motion"] .top { color: var(--ink); }
 .brand { display: flex; flex-direction: column; gap: 1px; text-decoration: none; }
 .brand b { font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: .01em; white-space: nowrap; }
 .brand span { font-size: 12px; opacity: .8; }
-.thesis {
-  font-style: italic; font-size: 14px; text-align: center; white-space: nowrap; color: var(--mist);
-  padding: 6px 14px; border-radius: 999px; background: rgba(21,18,14,.38);
-  -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
-}
-body[data-view="motion"] .thesis { color: var(--ink); background: rgba(21,18,14,.07); }
 .menu-btn {
   justify-self: end; display: inline-flex; align-items: center; gap: 10px;
   border: 0; border-radius: 999px; color: var(--mist); background: rgba(21,18,14,.38);
@@ -206,7 +200,6 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
 
 @media (max-width: 860px) {
   .top { grid-template-columns: 1fr auto; padding: 0 20px; }
-  .thesis { display: none; }
   .brand span { display: none; }
   .fork { flex-direction: column; }
   .panel { padding: 0 24px 28px; }
