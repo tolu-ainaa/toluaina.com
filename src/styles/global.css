@@ -374,3 +374,19 @@ body[data-view="home"][data-hover="motion"] { --cursor: var(--navy); }
 .cursor.is-link { width: 34px; height: 34px; opacity: .55; }
 .cursor.is-down { width: 8px; height: 8px; opacity: 1; }
 @media (pointer: coarse), (prefers-reduced-motion: reduce) { .cursor { display: none; } }
+
+/* ---------- waving hand ---------- */
+.with-wave { display: flex; align-items: center; gap: .25em; }
+.wave { display: inline-block; overflow: visible; }
+.wave-palm { fill: var(--mist); }
+.wave-thumb { fill: var(--yolk); }
+.wave-hand { transform-box: fill-box; transform-origin: 45% 92%; animation: wave 1.6s var(--ease-out) 2; animation-delay: .4s; }
+.wave:hover .wave-hand, .with-wave:hover .wave-hand { animation: wave 1.2s ease-in-out infinite; animation-delay: 0s; }
+@keyframes wave {
+  0%, 100% { transform: rotate(15deg); }
+  20% { transform: rotate(-12deg); }
+  40% { transform: rotate(18deg); }
+  60% { transform: rotate(-8deg); }
+  80% { transform: rotate(14deg); }
+}
+@media (prefers-reduced-motion: reduce) { .wave-hand, .wave:hover .wave-hand, .with-wave:hover .wave-hand { animation: none; } }
