@@ -6,7 +6,10 @@
   "linkedin": "https://www.linkedin.com/in/toluainaa",
   "studio": "https://www.galdar.studio",
   "showreel": {
-    "xr": null,
+    "xr": {
+      "video": "/media/xr-showreel.mp4",
+      "poster": "/media/xr-showreel.jpg"
+    },
     "motion": null
   },
   "cv": {

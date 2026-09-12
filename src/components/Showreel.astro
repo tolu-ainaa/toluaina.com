@@ -1,7 +1,7 @@
 ---
-// Showreel slot. Pass a YouTube/Vimeo URL and the iframe loads only when someone presses play.
-interface Props { label: string; url?: string | null; poster?: string | null }
-const { label, url, poster } = Astro.props;
+// Showreel slot. Accepts a YouTube/Vimeo URL (iframe loads only on play) or a local video file.
+interface Props { label: string; url?: string | null; video?: string | null; poster?: string | null }
+const { label, url, video, poster } = Astro.props;
 
 function embedUrl(u: string): string | null {
   const yt = u.match(/(?:youtu\.be\/|v=|\/embed\/)([\w-]{11})/);
@@ -11,22 +11,29 @@ function embedUrl(u: string): string | null {
   return null;
 }
 const embed = url ? embedUrl(url) : null;
+const ready = !!(embed || video);
 ---
-<div class="reel" data-embed={embed ?? undefined}>
+<div class="reel" data-embed={embed ?? undefined} data-video={video ?? undefined}>
   {poster && <img src={poster} alt="" loading="lazy" decoding="async" />}
-  <button class="play" type="button" disabled={!embed}>▶ {label}</button>
-  {!embed && <span class="cap">showreel slot · add a YouTube or Vimeo link in site.json</span>}
+  <button class="play" type="button" disabled={!ready}>▶ {label}</button>
+  {!ready && <span class="cap">showreel slot · add a link or file in site.json</span>}
 </div>
 
 <script>
-  document.querySelectorAll<HTMLElement>('.reel[data-embed]').forEach(reel => {
+  document.querySelectorAll<HTMLElement>('.reel[data-embed], .reel[data-video]').forEach(reel => {
     reel.querySelector('.play')?.addEventListener('click', () => {
-      const f = document.createElement('iframe');
-      f.src = reel.dataset.embed!;
-      f.allow = 'autoplay; fullscreen; picture-in-picture';
-      f.setAttribute('allowfullscreen', '');
-      f.title = 'Showreel';
-      reel.replaceChildren(f);
+      if (reel.dataset.embed) {
+        const f = document.createElement('iframe');
+        f.src = reel.dataset.embed; f.allow = 'autoplay; fullscreen; picture-in-picture';
+        f.setAttribute('allowfullscreen', ''); f.title = 'Showreel';
+        reel.replaceChildren(f);
+      } else if (reel.dataset.video) {
+        const v = document.createElement('video');
+        v.src = reel.dataset.video; v.controls = true; v.playsInline = true;
+        v.poster = reel.querySelector('img')?.src ?? '';
+        reel.replaceChildren(v);
+        v.play().catch(() => {});
+      }
     });
   });
 </script>

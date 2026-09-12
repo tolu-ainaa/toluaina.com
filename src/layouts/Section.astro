@@ -13,13 +13,14 @@ interface Props {
   intro: string;
   filters: string[];
   projects: any[];
-  reelUrl?: string | null;
+  reel?: string | { video?: string; url?: string; poster?: string } | null;   // a YouTube/Vimeo URL or a local file
   reelLabel: string;
   cvHref?: string | null;
   cvLabel: string;
   showStudio?: boolean;
 }
-const { view, title, description, heading, creds, intro, filters, projects, reelUrl, reelLabel, cvHref, cvLabel, showStudio } = Astro.props;
+const { view, title, description, heading, creds, intro, filters, projects, reel, reelLabel, cvHref, cvLabel, showStudio } = Astro.props;
+const r = typeof reel === 'string' ? { url: reel } : (reel ?? {});
 ---
 <Base title={title} description={description} view={view}>
   <section class={`section section--${view}`} aria-labelledby="sec-h">
@@ -36,7 +37,7 @@ const { view, title, description, heading, creds, intro, filters, projects, reel
       </div>
     </div>
     <slot name="above-reel" />
-    <Showreel label={reelLabel} url={reelUrl} />
+    <Showreel label={reelLabel} url={r.url} video={r.video} poster={r.poster} />
     <div class="grid">
       {projects.map((p, i) => <ProjectCard project={p} side={view} index={i} />)}
     </div>
