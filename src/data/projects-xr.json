@@ -1,0 +1,63 @@
+[
+  {
+    "slug": "painpath",
+    "title": "PainPath",
+    "line": "AR pain-mapping tool for clinicians on Quest 3. XRCC 2026 finalist.",
+    "tags": ["Mixed reality", "Quest 3"],
+    "meta": "Unity · Meta XR SDK · passthrough",
+    "poster": null,
+    "loop": null,
+    "glyph": 0
+  },
+  {
+    "slug": "arasteroids",
+    "title": "ARAsteroids",
+    "line": "Asteroids rebuilt in AR with ARKit, plus a user study on immersion. MSc dissertation, Distinction.",
+    "tags": ["iOS AR", "Research"],
+    "meta": "Unity · C# · ARKit",
+    "poster": null,
+    "loop": null,
+    "glyph": 1
+  },
+  {
+    "slug": "vr-ludo",
+    "title": "VR Ludo",
+    "line": "3D multiplayer Ludo for Meta Quest with controller and hand-tracking play. In development.",
+    "tags": ["VR", "Multiplayer"],
+    "meta": "Meta XR SDK · hands + controllers",
+    "poster": null,
+    "loop": null,
+    "glyph": 3
+  },
+  {
+    "slug": "snap-lenses",
+    "title": "Snap Lenses",
+    "line": "Playable AR games published as Snap Lenses. 31,000+ views and plays.",
+    "tags": ["Snap AR", "Shipped"],
+    "meta": "Lens Studio",
+    "poster": null,
+    "loop": null,
+    "glyph": 4
+  },
+  {
+    "slug": "webxr",
+    "title": "WebXR prototypes",
+    "line": "Browser-based spatial experiments. Loads on click, nothing downloads by accident.",
+    "tags": ["WebXR", "Browser"],
+    "meta": "loads on click",
+    "poster": null,
+    "loop": null,
+    "glyph": 2,
+    "playable": true
+  },
+  {
+    "slug": "ratecardly",
+    "title": "RateCardly design system",
+    "line": "Built the design system, tokens and illustration style for a SaaS product as sole designer.",
+    "tags": ["Product design", "Design system"],
+    "meta": "Figma · tokens · style guide",
+    "poster": null,
+    "loop": null,
+    "glyph": "ds"
+  }
+]

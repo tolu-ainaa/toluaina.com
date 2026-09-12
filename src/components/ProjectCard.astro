@@ -1,0 +1,33 @@
+---
+import { motionGlyph, xrGlyph, dsGlyph } from '../lib/glyphs';
+
+interface Props {
+  project: {
+    slug: string; title: string; line: string; tags: string[]; meta: string;
+    poster?: string | null; loop?: string | null; glyph?: number | 'ds'; hue?: number; playable?: boolean;
+  };
+  side: 'xr' | 'motion';
+  index: number;
+}
+const { project: p, side, index } = Astro.props;
+
+// Case-study pages come later; for now a card links to its future route.
+const href = `/${side}/${p.slug}`;
+const glyph = p.poster ? '' : side === 'motion' ? motionGlyph(p.hue ?? 40, index) : (p.glyph === 'ds' ? dsGlyph() : xrGlyph(Number(p.glyph ?? index)));
+---
+<a class="card" href={href} data-tags={p.tags.join('|')}>
+  <div class="thumb">
+    {p.poster
+      ? <img src={p.poster} alt="" loading="lazy" decoding="async" />
+      : <Fragment set:html={glyph} />}
+    {p.loop && <video muted playsinline loop preload="none" poster={p.poster ?? undefined} aria-hidden="true"><source src={p.loop} type="video/mp4" /></video>}
+    {!p.poster && <span class="placeholder">placeholder</span>}
+    {p.playable && <div class="play"><span>▶ Play in browser</span></div>}
+  </div>
+  <div class="row">
+    <h3>{p.title}</h3>
+    <p>{p.line}</p>
+    <span class="mono">{p.meta}</span>
+  </div>
+  <div class="tags">{p.tags.map(t => <span class="tag">{t}</span>)}</div>
+</a>

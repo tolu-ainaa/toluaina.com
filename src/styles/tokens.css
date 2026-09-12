@@ -1,0 +1,28 @@
+/* Design tokens. Two worlds on one site: the XR side is navy/signal blue, the Motion side is yolk/ink. */
+:root {
+  --yolk: #F6C445;
+  --paper: #FBF4E4;
+  --ink: #15120E;
+  --ink-raise: #221D16;
+  --navy: #0C1222;
+  --navy-raise: #141C31;
+  --signal: #5D8BFF;
+  --mist: #DCE4F5;
+  --mist-soft: #8E9BBF;
+
+  --display: 'Unbounded', 'Arial Black', Impact, sans-serif;
+  --body: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  --header-h: 64px;
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+
+  /* Fork choreography. Spec: 400 to 600ms; repeat visitors get less. */
+  --fork-ms: 520ms;
+  --xf-ms: 400ms;
+}
+body.is-return { --fork-ms: 300ms; --xf-ms: 280ms; }
+
+@media (max-width: 860px) {
+  :root { --header-h: 56px; }
+}

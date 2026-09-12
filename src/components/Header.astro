@@ -1,0 +1,41 @@
+---
+import site from '../data/site.json';
+interface Props { view: string }
+const { view } = Astro.props;
+const links = [
+  { href: '/xr', label: 'XR & Product', route: '/xr', view: 'xr' },
+  { href: '/motion', label: 'Motion', route: '/motion', view: 'motion' },
+  { href: '/about', label: 'About', route: '/about', view: 'about' },
+  { href: '/contact', label: 'Contact', route: '/contact', view: 'contact' },
+];
+---
+<header class="top">
+  <a class="brand" href="/"><b>{site.name}</b><span>{site.role}</span></a>
+  <div class="thesis">{site.thesis}</div>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><i aria-hidden="true"></i> Menu</button>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <div class="bar"><b>{site.name}</b><button class="close" type="button">Close</button></div>
+  <nav aria-label="Site">
+    {links.map(l => (
+      <a href={l.href} aria-current={view === l.view ? 'page' : undefined}>{l.label} <small>{l.route}</small></a>
+    ))}
+  </nav>
+  <div class="foot">
+    <a href={`mailto:${site.email}`}>{site.email}</a>
+    <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+    <a href={site.studio} target="_blank" rel="noopener">galdar.studio</a>
+  </div>
+</div>
+
+<script>
+  const menu = document.getElementById('menu')!;
+  const btn = document.querySelector<HTMLButtonElement>('.menu-btn')!;
+  const close = menu.querySelector<HTMLButtonElement>('.close')!;
+  const open = () => { menu.hidden = false; btn.setAttribute('aria-expanded', 'true'); close.focus(); };
+  const shut = () => { if (menu.hidden) return; menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); btn.focus(); };
+  btn.addEventListener('click', open);
+  close.addEventListener('click', shut);
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') shut(); });
+</script>

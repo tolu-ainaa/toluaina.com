@@ -1,0 +1,32 @@
+---
+// Showreel slot. Pass a YouTube/Vimeo URL and the iframe loads only when someone presses play.
+interface Props { label: string; url?: string | null; poster?: string | null }
+const { label, url, poster } = Astro.props;
+
+function embedUrl(u: string): string | null {
+  const yt = u.match(/(?:youtu\.be\/|v=|\/embed\/)([\w-]{11})/);
+  if (yt) return `https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&rel=0&modestbranding=1`;
+  const vm = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (vm) return `https://player.vimeo.com/video/${vm[1]}?autoplay=1&title=0&byline=0&portrait=0`;
+  return null;
+}
+const embed = url ? embedUrl(url) : null;
+---
+<div class="reel" data-embed={embed ?? undefined}>
+  {poster && <img src={poster} alt="" loading="lazy" decoding="async" />}
+  <button class="play" type="button" disabled={!embed}>▶ {label}</button>
+  {!embed && <span class="cap">showreel slot · add a YouTube or Vimeo link in site.json</span>}
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.reel[data-embed]').forEach(reel => {
+    reel.querySelector('.play')?.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = reel.dataset.embed!;
+      f.allow = 'autoplay; fullscreen; picture-in-picture';
+      f.setAttribute('allowfullscreen', '');
+      f.title = 'Showreel';
+      reel.replaceChildren(f);
+    });
+  });
+</script>

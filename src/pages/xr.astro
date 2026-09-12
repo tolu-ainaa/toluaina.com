@@ -1,0 +1,22 @@
+---
+import Section from '../layouts/Section.astro';
+import site from '../data/site.json';
+import projects from '../data/projects-xr.json';
+---
+<Section
+  view="xr"
+  title="XR & Product · Tolulope Aina"
+  description="Mixed-reality tools for clinicians, AR games on iOS, playable Snap Lenses, multiplayer VR for Quest, and product design systems. Unity, C#, Meta XR SDK, ARKit, WebXR."
+  heading="XR &amp; Product"
+  creds="XRCC 2026 finalist · MSc Computer Science, Distinction · Founder, GaldAR Studio"
+  intro="Shipped and in-progress work from GaldAR Studio, the MSc, and a stint as head of design. Headset titles link to the store and show a captured POV; browser builds load on click."
+  filters={['Mixed reality', 'iOS AR', 'VR', 'Snap AR', 'WebXR', 'Product design']}
+  projects={projects}
+  reelUrl={site.showreel.xr}
+  reelLabel="Play XR showreel"
+  cvHref={site.cv.xr}
+  cvLabel="CV for XR and Unity roles"
+  showStudio
+>
+  <p class="studio-line" slot="above-reel">Commercial spatial work runs through <a href={site.studio} target="_blank" rel="noopener">GaldAR Studio</a>. This page is the personal record of it.</p>
+</Section>

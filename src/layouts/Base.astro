@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import site from '../data/site.json';
+
+interface Props {
+  title: string;
+  description: string;
+  view: 'home' | 'xr' | 'motion' | 'about' | 'contact';
+}
+const { title, description, view } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <script is:inline>
+      // Repeat visitors get a shorter fork choreography. Runs before paint so there is no flash.
+      try { if (localStorage.getItem('ta-seen')) document.documentElement.classList.add('is-return'); localStorage.setItem('ta-seen', '1'); } catch (e) {}
+    </script>
+  </head>
+  <body data-view={view}>
+    <Header view={view} />
+    <slot />
+    {view !== 'home' && <a class="fab" href="/" aria-label="Back to main page">← Main page</a>}
+    <script>
+      // Move the repeat-visitor flag from <html> (set pre-paint) onto <body>, where the tokens read it.
+      if (document.documentElement.classList.contains('is-return')) document.body.classList.add('is-return');
+
+      // Phones only: the floating button fades the section out, then goes back through real history
+      // when we arrived from the fork, so swipe-back and this button behave the same way.
+      const fab = document.querySelector<HTMLAnchorElement>('.fab');
+      const mobile = () => matchMedia('(max-width: 860px)').matches;
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      fab?.addEventListener('click', (e) => {
+        const cameFromFork = sessionStorage.getItem('ta-from-fork') === '1';
+        if (!mobile()) return;                       // desktop never shows it anyway
+        e.preventDefault();
+        const go = () => (cameFromFork ? history.back() : (location.href = '/'));
+        if (reduce) return go();
+        document.body.classList.add('leave');
+        setTimeout(go, 300);
+      });
+
+      // Arriving on a section straight from a fork tap: rise in. Deep links skip this entirely.
+      if (sessionStorage.getItem('ta-arrive') === '1') {
+        sessionStorage.removeItem('ta-arrive');
+        if (mobile() && !reduce) document.body.classList.add('arrive');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+import site from '../data/site.json';
+interface Props { cvHref?: string | null; cvLabel?: string; showStudio?: boolean }
+const { cvHref, cvLabel, showStudio = false } = Astro.props;
+---
+<div class="sec-foot">
+  {cvHref && (
+    <div>
+      <h4>{cvLabel}</h4>
+      <a class="btn" href={cvHref} download>Download CV <small>(PDF)</small></a>
+    </div>
+  )}
+  <div>
+    <h4>Get in touch</h4>
+    <a class="email" href={`mailto:${site.email}`}>{site.email}</a>
+    <div class="links">
+      <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+      {showStudio && <a href={site.studio} target="_blank" rel="noopener">galdar.studio</a>}
+      <a href="/">Back to the fork</a>
+    </div>
+  </div>
+</div>

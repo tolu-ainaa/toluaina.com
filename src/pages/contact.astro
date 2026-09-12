@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Contact · Tolulope Aina" description="Get in touch about XR, Unity, creative technology or motion design roles." view="contact">
+  <section class="section section--plain" aria-labelledby="h-contact">
+    <a class="back" href="/">← Back to the fork</a>
+    <div class="sec-head"><div><h1 id="h-contact">Contact</h1><p>Email is the fastest route. Include the role or the brief and I will reply with relevant work.</p></div></div>
+    <a class="contact-big" href={`mailto:${site.email}`}>{site.email}</a>
+    <div class="sec-foot">
+      <div>
+        <h4>Elsewhere</h4>
+        <div class="links">
+          <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+          <a href={site.studio} target="_blank" rel="noopener">galdar.studio</a>
+          <a href="/">Back to the fork</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

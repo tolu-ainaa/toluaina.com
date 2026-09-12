@@ -1,0 +1,26 @@
+{
+  "name": "Tolulope Aina",
+  "role": "XR developer, motion designer",
+  "thesis": "A spatial computing engineer who designs.",
+  "email": "hello@toluaina.com",
+  "linkedin": "https://www.linkedin.com/in/toluainaa",
+  "studio": "https://www.galdar.studio",
+  "showreel": {
+    "xr": null,
+    "motion": null
+  },
+  "cv": {
+    "xr": "/cv/tolu-aina-xr.pdf",
+    "motion": "/cv/tolu-aina-motion.pdf"
+  },
+  "loops": {
+    "xr": {
+      "src": null,
+      "poster": null
+    },
+    "motion": {
+      "src": null,
+      "poster": null
+    }
+  }
+}
