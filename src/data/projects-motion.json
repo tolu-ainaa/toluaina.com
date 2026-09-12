@@ -48,16 +48,14 @@
       }
     ],
     "gallery": [
-      "/media/motion/bauhaus/storyboard.jpg",
-      "/media/motion/bauhaus/illustrations.jpg",
+      "/media/motion/bauhaus/storyboard-sheet.jpg",
       "/media/motion/bauhaus/still-3.jpg",
       "/media/motion/bauhaus/still-5.jpg",
       "/media/motion/bauhaus/still-2.jpg",
       "/media/motion/bauhaus/still-4.jpg"
     ],
     "galleryWide": [
-      0,
-      1
+      0
     ],
     "link": {
       "url": "https://www.behance.net/gallery/195715913/Bauhaus-Design-Principles-in-Motion-Design",
@@ -111,14 +109,6 @@
       }
     ],
     "extraLoopsPortrait": true,
-    "gallery": [
-      "/media/motion/perspective/title.jpg",
-      "/media/motion/perspective/palette.jpg",
-      "/media/motion/perspective/after-effects.jpg"
-    ],
-    "galleryWide": [
-      0
-    ],
     "processLoop": {
       "src": "/media/motion/perspective/process.mp4",
       "label": "Process: building one of the loops in After Effects"
