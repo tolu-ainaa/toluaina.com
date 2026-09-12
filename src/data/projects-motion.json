@@ -342,7 +342,13 @@
       "Year": "2023",
       "Industry": "Food and beverage",
       "Client": "Pepsi",
-      "Duration": "4 weeks"
+      "Duration": "4 weeks",
+      "Made as": "Freelance studio work"
+    },
+    "related": {
+      "slug": "swiffer",
+      "title": "Swiffer Instagram Stories",
+      "note": "Also from the studio years"
     }
   },
   {
@@ -403,59 +409,14 @@
       "Year": "2023",
       "Industry": "Home care",
       "Client": "Swiffer",
-      "Format": "Instagram Stories"
+      "Format": "Instagram Stories",
+      "Made as": "Freelance studio work"
+    },
+    "related": {
+      "slug": "pepsi-max",
+      "title": "Pepsi MAX UK campaign",
+      "note": "Also from the studio years"
     }
-  },
-  {
-    "slug": "miva-courseware",
-    "title": "Miva Open University courseware",
-    "line": "400+ educational videos for a digital-first university, reaching millions of students.",
-    "tags": [
-      "Explainers",
-      "Pipelines"
-    ],
-    "meta": "Led production",
-    "poster": null,
-    "loop": null,
-    "hue": 28
-  },
-  {
-    "slug": "ai-illustration-pipeline",
-    "title": "AI-assisted illustration pipeline",
-    "line": "Designed the pipeline that cut illustration time and cost by 30% without dropping quality.",
-    "tags": [
-      "Pipelines",
-      "R&D"
-    ],
-    "meta": "uLesson · Miva",
-    "poster": null,
-    "loop": null,
-    "hue": 50
-  },
-  {
-    "slug": "freelance-studio",
-    "title": "Freelance studio work",
-    "line": "Two years of 2D and 3D motion for brands through a US studio. Pepsi MAX and Swiffer are from this period.",
-    "tags": [
-      "3D",
-      "Campaigns"
-    ],
-    "meta": "2022 to 2024",
-    "poster": null,
-    "loop": null,
-    "hue": 18
-  },
-  {
-    "slug": "ulesson-campaigns",
-    "title": "uLesson campaigns",
-    "line": "Motion graphics for marketing campaigns. Engagement up 15%.",
-    "tags": [
-      "Campaigns"
-    ],
-    "meta": "After Effects",
-    "poster": null,
-    "loop": null,
-    "hue": 36
   },
   {
     "slug": "template-system",

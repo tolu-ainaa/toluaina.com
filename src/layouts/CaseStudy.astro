@@ -61,6 +61,12 @@ const wide = new Set<number>(p.galleryWide ?? []);
         <h4>Built with</h4>
         <div class="tags">{p.tools?.map((t: string) => <span class="tag">{t}</span>)}</div>
         {p.link && <a class="btn" href={p.link.url} target="_blank" rel="noopener">{p.link.label} ↗</a>}
+        {p.related && (
+          <>
+            <h4>{p.related.note}</h4>
+            <a class="next" href={`/${view}/${p.related.slug}`}>{p.related.title} →</a>
+          </>
+        )}
         {next.slug !== p.slug && (
           <>
             <h4>Next</h4>
