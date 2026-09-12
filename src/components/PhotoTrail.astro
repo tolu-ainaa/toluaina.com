@@ -17,6 +17,7 @@ try {
 ---
 {photos.length > 0 && (
   <div class="photo-trail" data-photos={JSON.stringify(photos)} role="img" aria-label={`${label}: ${photos.length} photos from events and studio work`} tabindex="0">
+    <img class="pt-frost" src={photos[0]} alt="" loading="lazy" decoding="async" />
     <span class="pt-label">{label}</span>
     <span class="pt-hint pt-hint--fine">{hint ?? `${photos.length} photos · move across to reveal`}</span>
     <span class="pt-hint pt-hint--coarse">{hint ?? `${photos.length} photos · tap to reveal`}</span>
