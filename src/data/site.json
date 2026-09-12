@@ -9,7 +9,10 @@
       "video": "/media/xr-showreel.mp4",
       "poster": "/media/xr-showreel.jpg"
     },
-    "motion": null
+    "motion": {
+      "url": "https://drive.google.com/file/d/1aEDIRe6hudTKj7cnz2OSnNrx-HZjqTPW/view",
+      "poster": "/media/fork-motion.jpg"
+    }
   },
   "cv": {
     "xr": "/cv/tolu-aina-xr.pdf",
