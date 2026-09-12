@@ -233,15 +233,33 @@
   {
     "slug": "ulesson-explainers",
     "title": "uLesson explainers",
-    "line": "100+ explainer videos for a West African edtech app. Contributed to a 20% rise in downloads.",
+    "line": "100+ animated lessons for one of West Africa's largest edtech apps, from storyboard to final render. Contributed to a 20% rise in downloads.",
     "tags": [
       "Explainers",
       "Edtech"
     ],
-    "meta": "After Effects · Illustrator",
-    "poster": null,
+    "meta": "After Effects · Illustrator · 2019 to 2024",
+    "poster": "/media/motion/ulesson/poster.jpg",
     "loop": null,
-    "hue": 42
+    "subtitle": "Educational animation at scale",
+    "year": "2019 to 2024",
+    "drive": "https://drive.google.com/file/d/18pB51vcNWQWn6iquoTT5td6XYQrj8ATV/view",
+    "desc": "uLesson teaches the school curriculum to millions of students across West Africa through short animated lessons. Across two stints, first as a motion graphic designer and later as senior animator, I made over a hundred of them: character-driven story scenes like this one, diagram-led explainers for maths and science, and the lower thirds, transitions and templates that kept a 20-plus person animation team consistent as it scaled. The sample above is one English lesson, told as a story rather than a lecture, which is how uLesson keeps eight-year-olds watching to the end.",
+    "details": [
+      "100+ explainer and lesson videos across English, maths and science, contributing to a 20% increase in app downloads",
+      "Helped set the visual consistency standards for a rapidly scaling animation team of 20+",
+      "Built the lower-thirds, transition and template systems in After Effects and Illustrator that the team produced from",
+      "Worked with R&D on AI-assisted production that cut time and cost by 30% without dropping quality",
+      "Motion graphics for marketing campaigns that lifted user engagement by 15%"
+    ],
+    "detailsLabel": "What I did",
+    "tools": [
+      "After Effects",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "challenge": "Volume without sameness. Hundreds of lessons a year, each needing to feel made for its subject, on a schedule that left no room for reworking scenes.",
+    "solution": "Systems first: a character and background library, template rigs for recurring devices (lower thirds, callouts, diagrams), and a review rhythm that caught problems at the animatic stage rather than in render. That is what made a hundred-plus videos possible without the quality sliding."
   },
   {
     "slug": "miva-courseware",
