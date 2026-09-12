@@ -11,3 +11,8 @@ Drop video and image files here. They are served from `/media/...`.
 ## Card posters and loops (optional)
 - `cards/<slug>.jpg` and `cards/<slug>.mp4` (3 to 5 s, 640 px wide, under 500 KB)
 - Then set `poster` / `loop` on that project in `src/data/projects-*.json`.
+
+## XR project media
+`projects/` holds the card posters (`<slug>.jpg`), hover loops (`<slug>-loop.mp4`), case-study heroes
+(`<slug>-hero.mp4`) and gallery stills, all encoded by `media-source/encode-projects.py` from the
+galdar-recreation source folder. Re-run that script after replacing a source file.

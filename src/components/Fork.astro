@@ -43,6 +43,10 @@ const motionLoop = loops.motion ?? null;
 
   startForkCanvases();
 
+  // Tell the header which half is hovered so its colours can follow the seam.
+  panels.forEach(p => p.addEventListener('mouseenter', () => { document.body.dataset.hover = p.dataset.side; }));
+  fork.addEventListener('mouseleave', () => { delete document.body.dataset.hover; });
+
   // Reduced motion: no autoplaying video either.
   if (reduce) fork.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 

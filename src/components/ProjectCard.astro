@@ -5,24 +5,27 @@ interface Props {
   project: {
     slug: string; title: string; line: string; tags: string[]; meta: string;
     poster?: string | null; loop?: string | null; glyph?: number | 'ds'; hue?: number; playable?: boolean;
+    desc?: string;
   };
   side: 'xr' | 'motion';
   index: number;
 }
 const { project: p, side, index } = Astro.props;
 
-// Case-study pages come later; for now a card links to its future route.
-const href = `/${side}/${p.slug}`;
+// A card links to its case study only once one exists (any project with a long description gets a page).
+const hasPage = !!p.desc;
+const href = hasPage ? `/${side}/${p.slug}` : undefined;
+const Tag = hasPage ? 'a' : 'article';
 const glyph = p.poster ? '' : side === 'motion' ? motionGlyph(p.hue ?? 40, index) : (p.glyph === 'ds' ? dsGlyph() : xrGlyph(Number(p.glyph ?? index)));
 ---
-<a class="card" href={href} data-tags={p.tags.join('|')}>
+<Tag class="card" href={href} data-tags={p.tags.join('|')}>
   <div class="thumb">
     {p.poster
-      ? <img src={p.poster} alt="" loading="lazy" decoding="async" />
+      ? <img src={p.poster} alt="" loading="lazy" decoding="async" width="640" height="360" />
       : <Fragment set:html={glyph} />}
     {p.loop && <video muted playsinline loop preload="none" poster={p.poster ?? undefined} aria-hidden="true"><source src={p.loop} type="video/mp4" /></video>}
     {!p.poster && <span class="placeholder">placeholder</span>}
-    {p.playable && <div class="play"><span>▶ Play in browser</span></div>}
+    {p.playable && <div class="play"><span>▶ Playable in browser</span></div>}
   </div>
   <div class="row">
     <h3>{p.title}</h3>
@@ -30,4 +33,22 @@ const glyph = p.poster ? '' : side === 'motion' ? motionGlyph(p.hue ?? 40, index
     <span class="mono">{p.meta}</span>
   </div>
   <div class="tags">{p.tags.map(t => <span class="tag">{t}</span>)}</div>
-</a>
+</Tag>
+
+<script>
+  // Loops answer a hover on desktop. On touch devices they play while the card is mostly on screen.
+  const cards = document.querySelectorAll<HTMLElement>('.card');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hover = matchMedia('(hover: hover)').matches;
+  cards.forEach(card => {
+    const v = card.querySelector('video'); if (!v || reduce) return;
+    const play = () => { v.play().catch(() => {}); card.classList.add('is-playing'); };
+    const stop = () => { v.pause(); card.classList.remove('is-playing'); };
+    if (hover) {
+      card.addEventListener('mouseenter', play);
+      card.addEventListener('mouseleave', stop);
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => (e.isIntersecting ? play() : stop()), { threshold: .6 }).observe(card);
+    }
+  });
+</script>
