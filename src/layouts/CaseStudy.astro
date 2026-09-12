@@ -1,0 +1,74 @@
+---
+// One case-study page type for both disciplines; the section theme comes from `view`.
+import Base from './Base.astro';
+import Showreel from '../components/Showreel.astro';
+import SectionFooter from '../components/SectionFooter.astro';
+import site from '../data/site.json';
+
+interface Props { view: 'xr' | 'motion'; p: Record<string, any>; all: Record<string, any>[] }
+const { view, p, all } = Astro.props;
+const withPages = all.filter(x => x.desc);
+const next = withPages[(withPages.findIndex(x => x.slug === p.slug) + 1) % withPages.length];
+const heroUrl = p.youtube ? `https://youtu.be/${p.youtube}` : (p.vimeo ?? null);
+const backLabel = view === 'xr' ? 'All XR & Product work' : 'All motion work';
+const cv = view === 'xr' ? { href: site.cv.xr, label: 'CV for XR and Unity roles' } : { href: site.cv.motion, label: 'CV for motion roles' };
+const wide = new Set<number>(p.galleryWide ?? []);
+---
+<Base title={`${p.title} · ${view === 'xr' ? 'XR' : 'Motion'} · ${site.name}`} description={p.line} view={view}>
+  <article class={`section section--${view} study`} aria-labelledby="h-study">
+    <a class="back" href={`/${view}`}>← {backLabel}</a>
+    <header class="study-head">
+      <div class="eyebrow">{p.tags.join(' · ')} · {p.year}</div>
+      <h1 id="h-study">{p.title}</h1>
+      <p class="sub">{p.subtitle}</p>
+    </header>
+
+    {heroUrl
+      ? <Showreel label={`Play ${p.title}`} url={heroUrl} poster={p.poster} />
+      : p.video
+        ? <div class="reel reel--video"><video muted playsinline loop autoplay preload="metadata" poster={p.poster ?? undefined}><source src={p.video} type="video/mp4" /></video></div>
+        : p.poster ? <div class="reel reel--video"><img src={p.poster} alt="" /></div> : null}
+
+    <div class="study-body">
+      <div class="study-main">
+        <p class="lede">{p.desc}</p>
+        {p.details && (
+          <>
+            {p.detailsLabel && <h4 class="details-label">{p.detailsLabel}</h4>}
+            <ul class="details">{p.details.map((d: string) => <li>{d}</li>)}</ul>
+          </>
+        )}
+        {(p.challenge || p.solution) && (
+          <div class="cs">
+            {p.challenge && <div><h4>Challenge</h4><p>{p.challenge}</p></div>}
+            {p.solution && <div><h4>Approach</h4><p>{p.solution}</p></div>}
+          </div>
+        )}
+      </div>
+      <aside class="study-side">
+        <h4>Built with</h4>
+        <div class="tags">{p.tools?.map((t: string) => <span class="tag">{t}</span>)}</div>
+        {p.link && <a class="btn" href={p.link.url} target="_blank" rel="noopener">{p.link.label} ↗</a>}
+        {next.slug !== p.slug && (
+          <>
+            <h4>Next</h4>
+            <a class="next" href={`/${view}/${next.slug}`}>{next.title} →</a>
+          </>
+        )}
+      </aside>
+    </div>
+
+    {p.extraLoops && (
+      <div class={`gallery gallery--loops ${view === 'motion' ? 'gallery--loops-wide' : ''}`}>
+        {p.extraLoops.map((l: { src: string; label: string }) => (
+          <figure><video muted playsinline loop autoplay preload="metadata"><source src={l.src} type="video/mp4" /></video><figcaption>{l.label}</figcaption></figure>
+        ))}
+      </div>
+    )}
+    {p.gallery && (
+      <div class="gallery">{p.gallery.map((g: string, i: number) => <img src={g} alt={`${p.title} still`} loading="lazy" decoding="async" class={wide.has(i) ? 'is-wide' : undefined} />)}</div>
+    )}
+
+    <SectionFooter cvHref={cv.href} cvLabel={cv.label} showStudio={view === 'xr'} />
+  </article>
+</Base>

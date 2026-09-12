@@ -1,68 +1,9 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Showreel from '../../components/Showreel.astro';
-import SectionFooter from '../../components/SectionFooter.astro';
-import site from '../../data/site.json';
+import CaseStudy from '../../layouts/CaseStudy.astro';
 import projects from '../../data/projects-xr.json';
-
 export function getStaticPaths() {
   return projects.filter(p => p.desc).map(p => ({ params: { slug: p.slug }, props: { p } }));
 }
-const { p } = Astro.props as { p: (typeof projects)[number] & Record<string, any> };
-const i = projects.findIndex(x => x.slug === p.slug);
-const next = projects.filter(x => x.desc)[(projects.filter(x => x.desc).findIndex(x => x.slug === p.slug) + 1) % projects.filter(x => x.desc).length];
-const ytUrl = p.youtube ? `https://youtu.be/${p.youtube}` : null;
+const { p } = Astro.props;
 ---
-<Base title={`${p.title} · XR · Tolu Aina`} description={p.line} view="xr">
-  <article class="section section--xr study" aria-labelledby="h-study">
-    <a class="back" href="/xr">← All XR &amp; Product work</a>
-    <header class="study-head">
-      <div class="eyebrow">{p.tags.join(' · ')} · {p.year}</div>
-      <h1 id="h-study">{p.title}</h1>
-      <p class="sub">{p.subtitle}</p>
-    </header>
-
-    {ytUrl
-      ? <Showreel label={`Play ${p.title} demo`} url={ytUrl} poster={p.poster} />
-      : p.video
-        ? <div class="reel reel--video"><video muted playsinline loop autoplay preload="metadata" poster={p.poster ?? undefined}><source src={p.video} type="video/mp4" /></video></div>
-        : p.poster
-          ? <div class="reel reel--video"><img src={p.poster} alt="" /></div>
-          : null}
-
-    <div class="study-body">
-      <div class="study-main">
-        <p class="lede">{p.desc}</p>
-        {p.details && (
-          <ul class="details">{p.details.map((d: string) => <li>{d}</li>)}</ul>
-        )}
-        {(p.challenge || p.solution) && (
-          <div class="cs">
-            {p.challenge && <div><h4>Challenge</h4><p>{p.challenge}</p></div>}
-            {p.solution && <div><h4>Approach</h4><p>{p.solution}</p></div>}
-          </div>
-        )}
-      </div>
-      <aside class="study-side">
-        <h4>Built with</h4>
-        <div class="tags">{p.tools?.map((t: string) => <span class="tag">{t}</span>)}</div>
-        {p.link && <a class="btn" href={p.link.url} target="_blank" rel="noopener">{p.link.label} ↗</a>}
-        <h4>Next</h4>
-        <a class="next" href={`/xr/${next.slug}`}>{next.title} →</a>
-      </aside>
-    </div>
-
-    {p.extraLoops && (
-      <div class="gallery gallery--loops">
-        {p.extraLoops.map((l: { src: string; label: string }) => (
-          <figure><video muted playsinline loop autoplay preload="metadata"><source src={l.src} type="video/mp4" /></video><figcaption>{l.label}</figcaption></figure>
-        ))}
-      </div>
-    )}
-    {p.gallery && (
-      <div class="gallery">{p.gallery.map((g: string) => <img src={g} alt={`${p.title} still`} loading="lazy" decoding="async" />)}</div>
-    )}
-
-    <SectionFooter cvHref={site.cv.xr} cvLabel="CV for XR and Unity roles" showStudio />
-  </article>
-</Base>
+<CaseStudy view="xr" p={p} all={projects} />

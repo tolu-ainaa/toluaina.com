@@ -1,0 +1,9 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import projects from '../../data/projects-motion.json';
+export function getStaticPaths() {
+  return projects.filter(p => (p as any).desc).map(p => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+---
+<CaseStudy view="motion" p={p} all={projects} />

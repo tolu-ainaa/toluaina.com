@@ -1,9 +1,77 @@
 [
   {
+    "slug": "bauhaus",
+    "title": "Bauhaus Design Principles in Motion",
+    "subtitle": "Explainer video",
+    "line": "An explainer that teaches Bauhaus principles by moving like them: geometry, primary colour and rhythm, animated with a four-person team.",
+    "tags": [
+      "Explainers",
+      "Team project"
+    ],
+    "meta": "After Effects · Illustrator · Procreate",
+    "year": "2024",
+    "poster": "/media/motion/bauhaus/poster.jpg",
+    "loop": "/media/motion/bauhaus/loop.mp4",
+    "vimeo": "https://vimeo.com/939339894",
+    "desc": "Driven by a collective desire to infuse innovation into our craft, we embarked on a journey to marry the fluidity of motion with the structured elegance of Bauhaus design. The result is an explainer that teaches the principles by demonstrating them: every transition, easing curve and colour block is doing the teaching.",
+    "details": [
+      "Storyboard: Tolu Aina",
+      "Animation: Stanley Agoha and Tolu Aina",
+      "Illustration: Mercy Ajiboye",
+      "Sound design: Gregory Henry",
+      "Creative direction: Stanley Agoha"
+    ],
+    "detailsLabel": "Credits",
+    "tools": [
+      "After Effects",
+      "Illustrator",
+      "Procreate"
+    ],
+    "challenge": "Explain a design movement built on restraint without the film itself becoming static. The storyboard had to find motion inside geometry that was designed to sit still.",
+    "solution": "Treated each Bauhaus principle as a rule for how the shapes may move: circles roll, squares slide on a grid, triangles pivot from a point. The rhythm came from the sound design, which was cut before the final animation pass.",
+    "extraLoops": [
+      {
+        "src": "/media/motion/bauhaus/excerpt-1.mp4",
+        "label": "Excerpt 1"
+      },
+      {
+        "src": "/media/motion/bauhaus/excerpt-2.mp4",
+        "label": "Excerpt 2"
+      },
+      {
+        "src": "/media/motion/bauhaus/excerpt-3.mp4",
+        "label": "Excerpt 3"
+      },
+      {
+        "src": "/media/motion/bauhaus/excerpt-4.mp4",
+        "label": "Excerpt 4"
+      }
+    ],
+    "gallery": [
+      "/media/motion/bauhaus/storyboard.jpg",
+      "/media/motion/bauhaus/illustrations.jpg",
+      "/media/motion/bauhaus/still-3.jpg",
+      "/media/motion/bauhaus/still-5.jpg",
+      "/media/motion/bauhaus/still-2.jpg",
+      "/media/motion/bauhaus/still-4.jpg"
+    ],
+    "galleryWide": [
+      0,
+      1
+    ],
+    "link": {
+      "url": "https://www.behance.net/gallery/195715913/Bauhaus-Design-Principles-in-Motion-Design",
+      "label": "View on Behance"
+    }
+  },
+  {
     "slug": "ulesson-explainers",
     "title": "uLesson explainers",
     "line": "100+ explainer videos for a West African edtech app. Contributed to a 20% rise in downloads.",
-    "tags": ["Explainers", "Edtech"],
+    "tags": [
+      "Explainers",
+      "Edtech"
+    ],
     "meta": "After Effects · Illustrator",
     "poster": null,
     "loop": null,
@@ -13,7 +81,10 @@
     "slug": "miva-courseware",
     "title": "Miva Open University courseware",
     "line": "400+ educational videos for a digital-first university, reaching millions of students.",
-    "tags": ["Explainers", "Pipelines"],
+    "tags": [
+      "Explainers",
+      "Pipelines"
+    ],
     "meta": "Led production",
     "poster": null,
     "loop": null,
@@ -23,7 +94,10 @@
     "slug": "ai-illustration-pipeline",
     "title": "AI-assisted illustration pipeline",
     "line": "Designed the pipeline that cut illustration time and cost by 30% without dropping quality.",
-    "tags": ["Pipelines", "R&D"],
+    "tags": [
+      "Pipelines",
+      "R&D"
+    ],
     "meta": "uLesson · Miva",
     "poster": null,
     "loop": null,
@@ -33,7 +107,10 @@
     "slug": "adliven",
     "title": "AdLiven 2D and 3D motion",
     "line": "Two years of 2D and 3D motion content for a US digital media company.",
-    "tags": ["3D", "Campaigns"],
+    "tags": [
+      "3D",
+      "Campaigns"
+    ],
     "meta": "2022 to 2024",
     "poster": null,
     "loop": null,
@@ -43,7 +120,9 @@
     "slug": "ulesson-campaigns",
     "title": "uLesson campaigns",
     "line": "Motion graphics for marketing campaigns. Engagement up 15%.",
-    "tags": ["Campaigns"],
+    "tags": [
+      "Campaigns"
+    ],
     "meta": "After Effects",
     "poster": null,
     "loop": null,
@@ -53,7 +132,10 @@
     "slug": "template-system",
     "title": "Template system",
     "line": "Lower thirds, transitions and templates in After Effects and Illustrator for a 20+ person team.",
-    "tags": ["UI motion", "Systems"],
+    "tags": [
+      "UI motion",
+      "Systems"
+    ],
     "meta": "AE + Illustrator",
     "poster": null,
     "loop": null,

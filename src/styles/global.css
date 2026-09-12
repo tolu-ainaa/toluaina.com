@@ -316,3 +316,14 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
 @media (prefers-reduced-motion: reduce) { .pt-img, .pt-img.is-in, .pt-img.is-out { transition: none; filter: none; transform: translate(-50%, -50%); } }
 .pt-hint--coarse { display: none; }
 @media (pointer: coarse) { .pt-hint--fine { display: none; } .pt-hint--coarse { display: block; } }
+
+/* case study on the motion (paper) theme */
+.section--motion.study .eyebrow { color: var(--ink); opacity: .6; }
+.section--motion.study .study-head h1 { font-weight: 800; }
+.section--motion .reel--video { background: #EADFC8; }
+.section--motion .study-side .next:hover { color: #B8860B; }
+.details-label { margin: 0 0 8px; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.gallery--loops-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gallery--loops-wide video { aspect-ratio: auto; width: 100%; max-height: none; object-fit: contain; }
+.gallery img.is-wide { grid-column: 1 / -1; }
+@media (max-width: 860px) { .gallery--loops-wide { grid-template-columns: 1fr; } }
