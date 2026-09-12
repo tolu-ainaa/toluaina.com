@@ -349,3 +349,5 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
 .facts dt { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; opacity: .6; }
 .facts dd { margin: 0; font-weight: 600; font-size: 15px; }
 @media (max-width: 860px) { .video-grid--mixed { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; } }
+.video-grid--portrait { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 860px) { .video-grid--portrait { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }

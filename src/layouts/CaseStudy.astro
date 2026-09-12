@@ -27,7 +27,7 @@ const wide = new Set<number>(p.galleryWide ?? []);
     </header>
 
     {p.videos ? (
-      <div class:list={["video-grid", { "video-grid--mixed": p.videos.some((v: any) => v.portrait) }]} role="group" aria-label={p.videosLabel}>
+      <div class:list={["video-grid", { "video-grid--mixed": p.videos.some((v: any) => v.portrait) && !p.videos.every((v: any) => v.portrait), "video-grid--portrait": p.videos.every((v: any) => v.portrait) }]} role="group" aria-label={p.videosLabel}>
         {p.videos.map((v: any, i: number) => (
           <figure class:list={{ "is-wide": v.wide, "is-portrait": v.portrait }}>
             <Showreel label={v.playLabel ?? `Play ${i + 1} of ${p.videos.length}`} url={v.drive ?? v.vimeo ?? v.youtube} video={v.video} poster={v.poster} portrait={!!v.portrait} />

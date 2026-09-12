@@ -291,7 +291,7 @@
     "line": "Four cuts from one Pepsi key visual: a motion poster, two Instagram Stories and a TikTok native, each paced for where it plays. Client work, 2023.",
     "tags": [
       "Campaigns",
-      "Client work"
+      "Studio work"
     ],
     "meta": "After Effects · Pepsi · 4 weeks",
     "year": "2023",
@@ -346,6 +346,67 @@
     }
   },
   {
+    "slug": "swiffer",
+    "title": "Swiffer Instagram Stories",
+    "subtitle": "Four 9:16 cuts for a duster launch",
+    "line": "Four Instagram Stories for Swiffer: live-action edits with brand end cards, and macro animation of dust and hair caught in the fibres. Studio work, 2023.",
+    "tags": [
+      "Campaigns",
+      "Studio work"
+    ],
+    "meta": "After Effects · Swiffer · 9:16",
+    "year": "2023",
+    "poster": "/media/motion/swiffer/poster.jpg",
+    "desc": "A set of Instagram Stories for Swiffer, built for the vertical feed. Two cuts edit live-action footage down to a single beat and land on the brand end card. The other two go macro: an animated close-up of the duster's fibres trapping dust, pollen and hair, painted rather than rendered, so the product demo reads as texture instead of a diagram.",
+    "details": [
+      "Four 9:16 cuts, sized and paced for Instagram Stories",
+      "Live-action edit to end card: one message, one beat, logo",
+      "Macro animation of dust and hair caught in the fibres, built in After Effects from painted layers",
+      "Brand colour system (green, yellow, orange) held across live and animated cuts"
+    ],
+    "detailsLabel": "The set",
+    "tools": [
+      "After Effects",
+      "Premiere Pro",
+      "Photoshop"
+    ],
+    "challenge": "Make a duster interesting for the three seconds a Stories viewer gives you, and make the animated demo feel like the same campaign as the live-action.",
+    "solution": "Lead with the person, close with the product. The macro cuts borrow the live footage's palette and lighting so the switch from film to animation reads as a zoom, not a change of world.",
+    "videos": [
+      {
+        "drive": "https://drive.google.com/file/d/1OA6qYHRon_6x0i3037KoU9-7ux3COu9l/view",
+        "poster": "/media/motion/swiffer/video-1.jpg",
+        "label": "Stories 1 · live action",
+        "portrait": true
+      },
+      {
+        "drive": "https://drive.google.com/file/d/10vuZXwPvp2paz7MD6B_EZeL-wqUqvz5X/view",
+        "poster": "/media/motion/swiffer/video-2.jpg",
+        "label": "Stories 2 · live action",
+        "portrait": true
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1hWCkvUHLPTJjwQq3EBz4v9kkAx5Q5B6W/view",
+        "poster": "/media/motion/swiffer/video-3.jpg",
+        "label": "Stories 3 · macro animation",
+        "portrait": true
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1l8TcVD88vjpX-psCzq34jzO4N1OxQziT/view",
+        "poster": "/media/motion/swiffer/video-4.jpg",
+        "label": "Stories 4 · macro animation",
+        "portrait": true
+      }
+    ],
+    "videosLabel": "Four Stories. Each plays on its own.",
+    "meta_client": {
+      "Year": "2023",
+      "Industry": "Home care",
+      "Client": "Swiffer",
+      "Format": "Instagram Stories"
+    }
+  },
+  {
     "slug": "miva-courseware",
     "title": "Miva Open University courseware",
     "line": "400+ educational videos for a digital-first university, reaching millions of students.",
@@ -372,9 +433,9 @@
     "hue": 50
   },
   {
-    "slug": "adliven",
-    "title": "AdLiven 2D and 3D motion",
-    "line": "Two years of 2D and 3D motion content for a US digital media company.",
+    "slug": "freelance-studio",
+    "title": "Freelance studio work",
+    "line": "Two years of 2D and 3D motion for brands through a US studio. Pepsi MAX and Swiffer are from this period.",
     "tags": [
       "3D",
       "Campaigns"
