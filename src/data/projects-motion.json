@@ -65,6 +65,70 @@
     }
   },
   {
+    "slug": "perspective",
+    "title": "Perspective",
+    "subtitle": "Ravie.co motion design challenge",
+    "line": "Four vertical loops that push flat shapes into depth: a ramp, a column, a wave, a grid. Made for the Ravie.co Perspective challenge.",
+    "tags": [
+      "UI motion",
+      "3D"
+    ],
+    "meta": "After Effects · Illustrator",
+    "year": "2023",
+    "poster": "/media/motion/perspective/poster.jpg",
+    "loop": "/media/motion/perspective/loop.mp4",
+    "vimeo": "https://vimeo.com/831697432",
+    "desc": "A Ravie.co challenge on the theme of perspective, made with Nicholas Candeias, Stephanie Kubudi Cardeman and OneMoreDay. Each piece takes a flat, Illustrator-built composition and gives it depth in After Effects: shapes recede along a grid, a column twists in space, a circle opens into a tunnel. Built entirely in 2D tools, which was the point.",
+    "details": [
+      "Collaborators: Nicholas Candeias, Stephanie Kubudi Cardeman, OneMoreDay",
+      "Four 9:16 loops for vertical screens",
+      "Palette: 100B1F · 1F4CBC · FF4A11 · FFB111 · FFFFFD",
+      "All depth faked in After Effects with 2D layers, parallax and gradient ramps"
+    ],
+    "detailsLabel": "Notes",
+    "tools": [
+      "After Effects",
+      "Illustrator"
+    ],
+    "challenge": "Make flat graphics read as three-dimensional without a 3D package, and keep four separate pieces feeling like one set.",
+    "solution": "One palette, one grid and one camera language across all four. Depth comes from overlap, scale and gradient direction, so the pieces stay crisp at any resolution and cheap to render.",
+    "extraLoops": [
+      {
+        "src": "/media/motion/perspective/frame-1.mp4",
+        "label": "Loop 1 of 4"
+      },
+      {
+        "src": "/media/motion/perspective/frame-2.mp4",
+        "label": "Loop 2 of 4"
+      },
+      {
+        "src": "/media/motion/perspective/frame-3.mp4",
+        "label": "Loop 3 of 4"
+      },
+      {
+        "src": "/media/motion/perspective/frame-4.mp4",
+        "label": "Loop 4 of 4"
+      }
+    ],
+    "extraLoopsPortrait": true,
+    "gallery": [
+      "/media/motion/perspective/title.jpg",
+      "/media/motion/perspective/palette.jpg",
+      "/media/motion/perspective/after-effects.jpg"
+    ],
+    "galleryWide": [
+      0
+    ],
+    "processLoop": {
+      "src": "/media/motion/perspective/process.mp4",
+      "label": "Process: building one of the loops in After Effects"
+    },
+    "link": {
+      "url": "https://www.behance.net/gallery/171910419/Perspective",
+      "label": "View on Behance"
+    }
+  },
+  {
     "slug": "ulesson-explainers",
     "title": "uLesson explainers",
     "line": "100+ explainer videos for a West African edtech app. Contributed to a 20% rise in downloads.",

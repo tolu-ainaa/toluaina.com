@@ -59,11 +59,14 @@ const wide = new Set<number>(p.galleryWide ?? []);
     </div>
 
     {p.extraLoops && (
-      <div class={`gallery gallery--loops ${view === 'motion' ? 'gallery--loops-wide' : ''}`}>
+      <div class={`gallery gallery--loops ${view === 'motion' && !p.extraLoopsPortrait ? 'gallery--loops-wide' : ''} ${p.extraLoopsPortrait ? 'gallery--loops-portrait' : ''}`}>
         {p.extraLoops.map((l: { src: string; label: string }) => (
           <figure><video muted playsinline loop autoplay preload="metadata"><source src={l.src} type="video/mp4" /></video><figcaption>{l.label}</figcaption></figure>
         ))}
       </div>
+    )}
+    {p.processLoop && (
+      <figure class="process"><video muted playsinline loop autoplay preload="metadata"><source src={p.processLoop.src} type="video/mp4" /></video><figcaption>{p.processLoop.label}</figcaption></figure>
     )}
     {p.gallery && (
       <div class="gallery">{p.gallery.map((g: string, i: number) => <img src={g} alt={`${p.title} still`} loading="lazy" decoding="async" class={wide.has(i) ? 'is-wide' : undefined} />)}</div>
