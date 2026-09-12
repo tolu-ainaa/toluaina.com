@@ -98,8 +98,20 @@ body[data-view="home"] { height: 100vh; height: 100dvh; overflow: hidden; }   /*
 .panel .enter { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
 .panel .enter i { display: inline-block; width: 28px; height: 1px; background: currentColor; transition: width var(--fork-ms) var(--ease-out); }
 .panel:hover .enter i { width: 52px; }
-.panel .meta { position: absolute; top: calc(var(--header-h) + 18px); left: 40px; font-family: var(--mono); font-size: 12px; opacity: .7; line-height: 1.7; }
-.panel--xr .meta { color: var(--signal); }
+/* the stack: chips below the header's frost band, each on its own dark backing so they read over any footage */
+.panel .stack {
+  position: absolute; top: calc(var(--header-h) + 52px); left: 40px; right: 40px; margin: 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.panel .stack li {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .04em; padding: 5px 9px; border-radius: 999px;
+  background: rgba(21,18,14,.72); border: 1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.panel--xr .stack li { color: var(--signal); background: rgba(12,18,34,.74); border-color: rgba(93,139,255,.35); }
+.panel--motion .stack li { color: var(--yolk); }
+.panel--xr .stack li:nth-child(-n+5), .panel--motion .stack li:nth-child(-n+4) { color: var(--mist); }   /* tools bright, context quieter */
+.panel--motion .stack li:nth-child(-n+4) { color: var(--paper); }
 .seam-note { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); font-family: var(--mono); font-size: 11px; color: var(--mist); background: rgba(21,18,14,.55); padding: 4px 10px; border-radius: 999px; pointer-events: none; white-space: nowrap; }
 
 /* ---------- section pages ---------- */
@@ -199,7 +211,7 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
   .fork.is-expanding .panel.is-target, .fork.is-expanding .panel.is-target:hover { flex-grow: 1; }
   .fork.no-anim .panel { transition: none; }
   .fork.is-expanding .panel:not(.is-target) > :not(canvas):not(video), .panel.is-settling > :not(canvas):not(video) { opacity: 0; }
-  .panel .meta { display: none; }
+  .panel .stack { display: none; }
   .panel p { font-size: 15px; margin-bottom: 16px; }
   .panel h2 { font-size: clamp(40px, 13vw, 64px); margin-bottom: 12px; }
   .panel .enter i { width: 20px; }

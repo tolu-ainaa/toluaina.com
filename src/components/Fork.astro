@@ -12,7 +12,9 @@ const motionLoop = loops.motion ?? null;
       {xrLoop?.src
         ? <video muted playsinline loop autoplay preload="auto" poster={xrLoop.poster} aria-hidden="true"><source src={xrLoop.src} type="video/mp4" /></video>
         : <canvas id="cv-xr" aria-hidden="true"></canvas>}
-      <div class="meta">Unity · C# · Meta XR SDK · ARKit · WebXR<br />Quest 3 · passthrough · hand tracking · spatial UI</div>
+      <ul class="stack" aria-label="XR stack">
+        {['Unity', 'C#', 'Meta XR SDK', 'ARKit', 'WebXR', 'Quest 3', 'passthrough', 'hand tracking', 'spatial UI'].map(t => <li>{t}</li>)}
+      </ul>
       <div class="eyebrow">/xr</div>
       <h2>XR &amp; Product</h2>
       <p>Augmented, virtual and mixed reality in Unity and C#, for Meta Quest, iOS and the web. Real-time 3D, spatial UI, hand tracking and passthrough, with the product design to make it usable.</p>
@@ -22,7 +24,9 @@ const motionLoop = loops.motion ?? null;
       {motionLoop?.src
         ? <video muted playsinline loop autoplay preload="auto" poster={motionLoop.poster} aria-hidden="true"><source src={motionLoop.src} type="video/mp4" /></video>
         : <canvas id="cv-motion" aria-hidden="true"></canvas>}
-      <div class="meta">After Effects · Illustrator · Figma<br />2D / 3D · 24 fps · 500+ videos shipped</div>
+      <ul class="stack" aria-label="Motion stack">
+        {['After Effects', 'Illustrator', 'Figma', 'Blender', '2D / 3D', '24 fps', '500+ videos shipped'].map(t => <li>{t}</li>)}
+      </ul>
       <div class="eyebrow">/motion</div>
       <h2>Motion</h2>
       <p>Cinematic visual storytelling for screens and spatial environments. Explainers, brand campaigns, UI motion and 3D, plus the production pipelines behind 500+ shipped videos.</p>
