@@ -233,7 +233,7 @@
   {
     "slug": "ulesson-explainers",
     "title": "uLesson explainers",
-    "line": "100+ animated lessons for one of West Africa's largest edtech apps, from storyboard to final render. Contributed to a 20% rise in downloads.",
+    "line": "100+ animated lessons for one of West Africa's largest edtech apps. Four samples inside, each playable.",
     "tags": [
       "Explainers",
       "Edtech"
@@ -243,8 +243,7 @@
     "loop": null,
     "subtitle": "Educational animation at scale",
     "year": "2019 to 2024",
-    "drive": "https://drive.google.com/file/d/18pB51vcNWQWn6iquoTT5td6XYQrj8ATV/view",
-    "desc": "uLesson teaches the school curriculum to millions of students across West Africa through short animated lessons. Across two stints, first as a motion graphic designer and later as senior animator, I made over a hundred of them: character-driven story scenes like this one, diagram-led explainers for maths and science, and the lower thirds, transitions and templates that kept a 20-plus person animation team consistent as it scaled. The sample above is one English lesson, told as a story rather than a lecture, which is how uLesson keeps eight-year-olds watching to the end.",
+    "desc": "uLesson teaches the school curriculum to millions of students across West Africa through short animated lessons. Across two stints, first as a motion graphic designer and later as senior animator, I made over a hundred of them: character-driven story scenes like this one, diagram-led explainers for maths and science, and the lower thirds, transitions and templates that kept a 20-plus person animation team consistent as it scaled. The four samples above are English lessons, told as stories rather than lectures, which is how uLesson keeps young students watching to the end.",
     "details": [
       "100+ explainer and lesson videos across English, maths and science, contributing to a 20% increase in app downloads",
       "Helped set the visual consistency standards for a rapidly scaling animation team of 20+",
@@ -259,7 +258,31 @@
       "Photoshop"
     ],
     "challenge": "Volume without sameness. Hundreds of lessons a year, each needing to feel made for its subject, on a schedule that left no room for reworking scenes.",
-    "solution": "Systems first: a character and background library, template rigs for recurring devices (lower thirds, callouts, diagrams), and a review rhythm that caught problems at the animatic stage rather than in render. That is what made a hundred-plus videos possible without the quality sliding."
+    "solution": "Systems first: a character and background library, template rigs for recurring devices (lower thirds, callouts, diagrams), and a review rhythm that caught problems at the animatic stage rather than in render. That is what made a hundred-plus videos possible without the quality sliding.",
+    "videos": [
+      {
+        "drive": "https://drive.google.com/file/d/18pB51vcNWQWn6iquoTT5td6XYQrj8ATV/view",
+        "poster": "/media/motion/ulesson/lesson-1.jpg",
+        "label": "ENG08 · 08_01_07"
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1TIBRABlgo7vcRuUxJojzsnElJVz-HZQC/view",
+        "poster": "/media/motion/ulesson/lesson-2.jpg",
+        "label": "ENG10 · 30_01_01"
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1R_SXVCIBYYWyvZ8Z-b1ThpuUjeGjUoE3/view",
+        "poster": "/media/motion/ulesson/lesson-3.jpg",
+        "label": "ENG10 · 31_02_02"
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1W93FkTyU6Sle5bv9KjQYeStOOun1dk74/view",
+        "poster": "/media/motion/ulesson/lesson-4.jpg",
+        "label": "ENG12 · 29_01_04"
+      }
+    ],
+    "videosLabel": "Four lessons. Each plays on its own; press one, then the next.",
+    "badge": "4 lessons inside"
   },
   {
     "slug": "miva-courseware",

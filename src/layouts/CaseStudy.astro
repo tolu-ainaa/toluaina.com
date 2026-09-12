@@ -23,7 +23,16 @@ const wide = new Set<number>(p.galleryWide ?? []);
       <p class="sub">{p.subtitle}</p>
     </header>
 
-    {heroUrl
+    {p.videos ? (
+      <div class="video-grid" role="group" aria-label={p.videosLabel}>
+        {p.videos.map((v: any, i: number) => (
+          <figure>
+            <Showreel label={`Play lesson ${i + 1}`} url={v.drive ?? v.vimeo ?? v.youtube} video={v.video} poster={v.poster} />
+            <figcaption>{v.label}</figcaption>
+          </figure>
+        ))}
+      </div>
+    ) : heroUrl
       ? <Showreel label={`Play ${p.title}`} url={heroUrl} poster={p.heroPoster ?? p.poster} portrait={!!p.vimeoPortrait} />
       : p.video
         ? <div class="reel reel--video"><video muted playsinline loop autoplay preload="metadata" poster={p.poster ?? undefined}><source src={p.video} type="video/mp4" /></video></div>

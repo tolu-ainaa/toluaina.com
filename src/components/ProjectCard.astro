@@ -5,7 +5,7 @@ interface Props {
   project: {
     slug: string; title: string; line: string; tags: string[]; meta: string;
     poster?: string | null; loop?: string | null; glyph?: number | 'ds'; hue?: number; playable?: boolean;
-    desc?: string;
+    desc?: string; badge?: string;
   };
   side: 'xr' | 'motion';
   index: number;
@@ -26,6 +26,7 @@ const glyph = p.poster ? '' : side === 'motion' ? motionGlyph(p.hue ?? 40, index
     {p.loop && <video muted playsinline loop preload="none" poster={p.poster ?? undefined} aria-hidden="true"><source src={p.loop} type="video/mp4" /></video>}
     {!p.poster && <span class="placeholder">placeholder</span>}
     {p.playable && <div class="play"><span>▶ Playable in browser</span></div>}
+    {p.badge && <span class="badge">{p.badge}</span>}
   </div>
   <div class="row">
     <h3>{p.title}</h3>
