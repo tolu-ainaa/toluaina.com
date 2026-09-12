@@ -1,13 +1,18 @@
 ---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import site from '../data/site.json';
 interface Props { cvHref?: string | null; cvLabel?: string; showStudio?: boolean }
 const { cvHref, cvLabel, showStudio = false } = Astro.props;
+const cvReady = !!cvHref && existsSync(join(process.cwd(), 'public', cvHref));
 ---
 <div class="sec-foot">
   {cvHref && (
     <div>
       <h4>{cvLabel}</h4>
-      <a class="btn" href={cvHref} download>Download CV <small>(PDF)</small></a>
+      {cvReady
+        ? <a class="btn" href={cvHref} download>Download CV <small>(PDF)</small></a>
+        : <a class="btn" href={`mailto:${site.email}?subject=${encodeURIComponent("CV request: " + cvLabel)}`}>Request CV <small>(by email)</small></a>}
     </div>
   )}
   <div>
