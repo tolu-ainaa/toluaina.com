@@ -129,6 +129,108 @@
     }
   },
   {
+    "slug": "step-forward",
+    "title": "Step Forward",
+    "subtitle": "3D motion spot for a Converse-style shoe",
+    "line": "A 15-second spec ad built in Blender and After Effects: a sneaker in a minimal 3D space with orbiting type. Built to move, made to last.",
+    "tags": [
+      "3D",
+      "Experiments",
+      "Campaigns"
+    ],
+    "meta": "Blender · After Effects · 13 s",
+    "year": "2025",
+    "poster": "/media/motion/step-forward/poster.jpg",
+    "vimeo": "https://vimeo.com/1089552794",
+    "desc": "A short, visually engaging shoe advertisement that uses 3D animation to highlight the shoe's unique features. The aim was to blend motion design, product visualisation and sound design into a compelling 15 to 30 second piece. Modelled and rendered in Blender (Cycles), finished in After Effects.",
+    "details": [
+      "Visual style: sleek, minimalistic 3D environment with orbiting text",
+      "Colour palette: monochrome with a blue brand accent",
+      "Mood: futuristic, luxurious, streetwear",
+      "Typography: bold sans-serif, high contrast, clean motion curves",
+      "Sound design: RnB, laid back, sentimental (music: Freepik, High Rise)",
+      "Creative direction, design and animation: Tolu Aina"
+    ],
+    "detailsLabel": "Creative direction",
+    "tools": [
+      "Blender",
+      "After Effects",
+      "Premiere Pro",
+      "Photoshop",
+      "Figma"
+    ],
+    "gallery": [
+      "/media/motion/step-forward/sketch.jpg",
+      "/media/motion/step-forward/blender-1.jpg",
+      "/media/motion/step-forward/blender-2.jpg",
+      "/media/motion/step-forward/blender-3.jpg"
+    ],
+    "galleryWide": [
+      0
+    ],
+    "link": {
+      "url": "https://www.behance.net/gallery/227236557/Step-Forward-3D-Motion-Spot-for-a-converse-style-shoe",
+      "label": "View on Behance"
+    }
+  },
+  {
+    "slug": "rubiks-cube",
+    "title": "The Rubik's Cube Experiment",
+    "subtitle": "10-second light study",
+    "line": "A Rubik's cube stripped of colour and given light instead. One cube, one camera move, a purple and pink room. Personal project.",
+    "tags": [
+      "Experiments",
+      "3D"
+    ],
+    "meta": "After Effects · 10 s",
+    "year": "2026",
+    "poster": "/media/motion/rubiks/poster.jpg",
+    "vimeo": "https://vimeo.com/1168556370",
+    "desc": "This started as a simple question: what happens when you strip a Rubik's cube of its colour and give it light instead? A personal motion design project, a 10-second video built around a glowing 3D cube, dynamic camera movement, and a deep purple and pink environment. No rules, no brief, just a shape and an idea. The goal was to push my understanding of light behaviour in 3D and explore how much life you can give a single object through glow, environment and motion alone.",
+    "details": [
+      "The sketch: six rough panels mapping the motion. It starts on a light source, moves into the cube appearing and rotating, and closes back on the light. Kept simple on purpose.",
+      "The styleframes were red. The finish is white and purple. That shift happened in the process, and that is exactly the point."
+    ],
+    "detailsLabel": "Process",
+    "tools": [
+      "After Effects"
+    ],
+    "gallery": [
+      "/media/motion/rubiks/still-1.jpg",
+      "/media/motion/rubiks/still-2.jpg",
+      "/media/motion/rubiks/still-3.jpg",
+      "/media/motion/rubiks/sketch.jpg",
+      "/media/motion/rubiks/styleframes.jpg"
+    ],
+    "galleryWide": [
+      3,
+      4
+    ],
+    "link": {
+      "url": "https://www.behance.net/gallery/244860241/The-Rubiks-cube-Experiment",
+      "label": "View on Behance"
+    }
+  },
+  {
+    "slug": "joy-con",
+    "title": "Joy_Con",
+    "subtitle": "A twist on retro gaming",
+    "line": "A three-second vertical loop: a retro controller, one idea, no brief.",
+    "tags": [
+      "Experiments"
+    ],
+    "meta": "3 s · vertical",
+    "year": "2025",
+    "poster": "/media/motion/joycon/poster.jpg",
+    "vimeo": "https://vimeo.com/1126250797",
+    "vimeoPortrait": true,
+    "desc": "A three-second vertical loop made for the sake of making it: a retro controller, a blue room and one move. Experiments like this are where the timing gets tested before it ends up in client work.",
+    "tools": [
+      "After Effects"
+    ],
+    "heroPoster": "/media/motion/joycon/frame.jpg"
+  },
+  {
     "slug": "ulesson-explainers",
     "title": "uLesson explainers",
     "line": "100+ explainer videos for a West African edtech app. Contributed to a 20% rise in downloads.",

@@ -24,7 +24,7 @@ const wide = new Set<number>(p.galleryWide ?? []);
     </header>
 
     {heroUrl
-      ? <Showreel label={`Play ${p.title}`} url={heroUrl} poster={p.poster} />
+      ? <Showreel label={`Play ${p.title}`} url={heroUrl} poster={p.heroPoster ?? p.poster} portrait={!!p.vimeoPortrait} />
       : p.video
         ? <div class="reel reel--video"><video muted playsinline loop autoplay preload="metadata" poster={p.poster ?? undefined}><source src={p.video} type="video/mp4" /></video></div>
         : p.poster ? <div class="reel reel--video"><img src={p.poster} alt="" /></div> : null}
