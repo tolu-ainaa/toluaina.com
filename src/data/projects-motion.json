@@ -285,6 +285,67 @@
     "badge": "4 lessons inside"
   },
   {
+    "slug": "pepsi-max",
+    "title": "Pepsi MAX UK campaign",
+    "subtitle": "Platform-specific video suite from one key visual",
+    "line": "Four cuts from one Pepsi key visual: a motion poster, two Instagram Stories and a TikTok native, each paced for where it plays. Client work, 2023.",
+    "tags": [
+      "Campaigns",
+      "Client work"
+    ],
+    "meta": "After Effects · Pepsi · 4 weeks",
+    "year": "2023",
+    "poster": "/media/motion/pepsi/poster.jpg",
+    "loop": "/media/motion/pepsi/loop.mp4",
+    "desc": "A series of clean, animated brand visuals built from the core key visual, combining smooth motion, controlled transitions and precise timing to create a polished, platform-ready set of digital video assets. Pepsi needed video for several platforms that kept one visual identity and one clear message across every format.",
+    "details": [
+      "Motion poster: animated the lead key visual to feel like a static billboard brought to life",
+      "Social video: staggered three messages, opening on a human moment before moving to product, with a vertical scroll that mimics a live feed",
+      "Bumper: adapted the vertical structure into a forced-view format built to grab attention and hold it for the full runtime",
+      "TikTok: stripped the branding back for a short, native-feeling execution aligned with how the platform behaves"
+    ],
+    "detailsLabel": "The four cuts",
+    "tools": [
+      "After Effects",
+      "Illustrator"
+    ],
+    "challenge": "Keep brand consistency across formats while adapting motion, pacing and layout to each platform, with every brand detail aligned precisely so transitions and animation feel smooth and intentional.",
+    "solution": "One key visual, one motion language, four deliveries. Delivered a cohesive multi-platform video suite that respected Pepsi brand guidelines while optimising each asset for its audience and viewing context.",
+    "videos": [
+      {
+        "drive": "https://drive.google.com/file/d/1N3A4us0MqXdAgIr22m-LJCXjGzwx2pHF/view",
+        "poster": "/media/motion/pepsi/video-3.jpg",
+        "label": "Motion poster · 16:9",
+        "wide": true
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1PU0H9GmHFhSmzC07qcAGLAH60efPrbZ7/view",
+        "poster": "/media/motion/pepsi/video-1.jpg",
+        "label": "Instagram Stories · 9:16",
+        "portrait": true
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1Vzc2d1xsyRurEBDkD1-ptYOFngOageLr/view",
+        "poster": "/media/motion/pepsi/video-2.jpg",
+        "label": "Instagram Stories · 9:16",
+        "portrait": true
+      },
+      {
+        "drive": "https://drive.google.com/file/d/1lWwGYpVl-MBrxH-eWe_pZSfLfsJMLsps/view",
+        "poster": "/media/motion/pepsi/video-4.jpg",
+        "label": "TikTok in-feed native · 9:16",
+        "portrait": true
+      }
+    ],
+    "videosLabel": "Four deliverables. Each plays on its own.",
+    "meta_client": {
+      "Year": "2023",
+      "Industry": "Food and beverage",
+      "Client": "Pepsi",
+      "Duration": "4 weeks"
+    }
+  },
+  {
     "slug": "miva-courseware",
     "title": "Miva Open University courseware",
     "line": "400+ educational videos for a digital-first university, reaching millions of students.",

@@ -21,13 +21,16 @@ const wide = new Set<number>(p.galleryWide ?? []);
       <div class="eyebrow">{p.tags.join(' · ')} · {p.year}</div>
       <h1 id="h-study">{p.title}</h1>
       <p class="sub">{p.subtitle}</p>
+      {p.meta_client && (
+        <dl class="facts">{Object.entries(p.meta_client).map(([k, v]) => <div><dt>{k}</dt><dd>{v as string}</dd></div>)}</dl>
+      )}
     </header>
 
     {p.videos ? (
-      <div class="video-grid" role="group" aria-label={p.videosLabel}>
+      <div class:list={["video-grid", { "video-grid--mixed": p.videos.some((v: any) => v.portrait) }]} role="group" aria-label={p.videosLabel}>
         {p.videos.map((v: any, i: number) => (
-          <figure>
-            <Showreel label={`Play lesson ${i + 1}`} url={v.drive ?? v.vimeo ?? v.youtube} video={v.video} poster={v.poster} />
+          <figure class:list={{ "is-wide": v.wide, "is-portrait": v.portrait }}>
+            <Showreel label={v.playLabel ?? `Play ${i + 1} of ${p.videos.length}`} url={v.drive ?? v.vimeo ?? v.youtube} video={v.video} poster={v.poster} portrait={!!v.portrait} />
             <figcaption>{v.label}</figcaption>
           </figure>
         ))}

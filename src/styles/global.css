@@ -341,3 +341,11 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
 .video-grid figcaption { margin-top: 8px; font-family: var(--mono); font-size: 12px; opacity: .7; }
 .thumb .badge { position: absolute; left: 10px; bottom: 8px; padding: 4px 10px; border-radius: 999px; background: rgba(21,18,14,.75); color: var(--yolk); font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(4px); }
 @media (max-width: 860px) { .video-grid { grid-template-columns: 1fr; } }
+.video-grid--mixed { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.video-grid .is-wide { grid-column: 1 / -1; }
+.video-grid .is-portrait .reel { aspect-ratio: 9 / 16; max-width: none; margin: 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 32px; margin: 18px 0 0; }
+.facts div { display: flex; flex-direction: column; gap: 2px; }
+.facts dt { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; opacity: .6; }
+.facts dd { margin: 0; font-weight: 600; font-size: 15px; }
+@media (max-width: 860px) { .video-grid--mixed { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; } }
