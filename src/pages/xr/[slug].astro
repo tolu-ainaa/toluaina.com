@@ -13,7 +13,7 @@ const i = projects.findIndex(x => x.slug === p.slug);
 const next = projects.filter(x => x.desc)[(projects.filter(x => x.desc).findIndex(x => x.slug === p.slug) + 1) % projects.filter(x => x.desc).length];
 const ytUrl = p.youtube ? `https://youtu.be/${p.youtube}` : null;
 ---
-<Base title={`${p.title} · XR · Tolulope Aina`} description={p.line} view="xr">
+<Base title={`${p.title} · XR · Tolu Aina`} description={p.line} view="xr">
   <article class="section section--xr study" aria-labelledby="h-study">
     <a class="back" href="/xr">← All XR &amp; Product work</a>
     <header class="study-head">

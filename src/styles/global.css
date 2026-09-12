@@ -237,3 +237,33 @@ body.leave .section { animation: xf-out var(--xf-ms) var(--ease-out) forwards; }
 }
 .reel[data-video] { aspect-ratio: 16 / 9; }
 .reel > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; }
+
+/* ---------- about: portrait ---------- */
+.about-grid { display: grid; grid-template-columns: minmax(0, 62ch) 380px; gap: 56px; align-items: start; }
+.portrait { margin: 0; order: 2; position: sticky; top: calc(var(--header-h) + 24px); }
+.portrait .frame { position: relative; }
+.portrait img {
+  display: block; width: 100%; height: auto; border-radius: 6px;
+  /* at rest: a cool, slightly desaturated print sitting a touch off-axis */
+  filter: grayscale(.35) contrast(1.05);
+  transform: rotate(-2deg) translateY(4px);
+  transition: transform .55s var(--ease-out), filter .55s var(--ease-out), box-shadow .55s var(--ease-out);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+.portrait .frame::before {
+  /* yolk wash, mirrors the fork's tint; lifts on hover */
+  content: ''; position: absolute; inset: 0; border-radius: 6px; pointer-events: none;
+  background: var(--yolk); mix-blend-mode: multiply; opacity: .45;
+  transform: rotate(-2deg) translateY(4px);
+  transition: opacity .55s var(--ease-out), transform .55s var(--ease-out);
+}
+.portrait:hover img, .portrait:focus-within img { filter: none; transform: rotate(0) translateY(0) scale(1.03); box-shadow: 0 26px 56px rgba(0,0,0,.45); }
+.portrait:hover .frame::before, .portrait:focus-within .frame::before { opacity: 0; transform: rotate(0) translateY(0) scale(1.03); }
+.portrait figcaption { margin-top: 14px; font-family: var(--mono); font-size: 12px; line-height: 1.6; color: var(--mist-soft); }
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  .portrait { order: 0; position: static; max-width: 420px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait img, .portrait .frame::before { transition: none; transform: none; }
+}

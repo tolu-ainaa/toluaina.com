@@ -3,15 +3,21 @@ import Base from '../layouts/Base.astro';
 import SectionFooter from '../components/SectionFooter.astro';
 import site from '../data/site.json';
 ---
-<Base title="About · Tolulope Aina" description="XR developer and motion designer. Unity, C#, Meta Quest, ARKit, WebXR. Founder of GaldAR Studio. MSc Computer Science, Distinction." view="about">
+<Base title="About · Tolu Aina" description="XR developer and motion designer. Unity, C#, Meta Quest, ARKit, WebXR. Founder of GaldAR Studio. MSc Computer Science, Distinction." view="about">
   <section class="section section--plain" aria-labelledby="h-about">
     <a class="back" href="/">← Back to the fork</a>
     <div class="sec-head"><div><h1 id="h-about">About</h1></div></div>
+    <div class="about-grid">
+    <figure class="portrait">
+      <div class="frame"><img src="/media/tolu-aina.jpg" srcset="/media/tolu-aina-600.jpg 600w, /media/tolu-aina.jpg 1200w" sizes="(max-width: 860px) 100vw, 380px" width="1200" height="1500" alt="Tolu Aina laughing in a black t-shirt at the XR Creator Challenge, lanyard on, others seated around" loading="lazy" decoding="async" /></div>
+      <figcaption>XR Creator Challenge 2026, with PainPath in the finals. Photo: Jens Ahner.</figcaption>
+    </figure>
     <div class="prose">
       <p>I build augmented, virtual and mixed reality applications in Unity and C# for Meta Quest, iOS and the web, and I came to that from six years in motion design and creative technology. The overlap is the point: the timing and easing that make an explainer land are the same instincts that make a spatial interface feel right.</p>
       <p>Recent work includes PainPath, an AR pain-mapping tool for clinicians and an XRCC 2026 finalist, an ARKit arcade game built as MSc research into immersion, and a multiplayer VR Ludo game in progress for Quest. Before that: 500+ educational and campaign videos for uLesson and Miva Open University, and an AI-assisted illustration pipeline that cut production cost by 30%.</p>
       <p>Commercial spatial work runs through <a href={site.studio} target="_blank" rel="noopener">GaldAR Studio</a>, an independent studio I founded in 2025. This site is the personal record of both disciplines.</p>
       <p>MSc Computer Science (Distinction), University of Chester. Open to XR Developer, Unity Developer and Creative Technologist roles, UK or remote.</p>
+    </div>
     </div>
     <SectionFooter showStudio />
   </section>
