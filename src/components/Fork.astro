@@ -10,7 +10,7 @@ const motionLoop = loops.motion ?? null;
   <main class="fork" id="fork">
     <a class="panel panel--xr" href="/xr" data-side="xr" aria-label="Enter XR and product work">
       {xrLoop?.src
-        ? <video muted playsinline loop autoplay preload="none" poster={xrLoop.poster} aria-hidden="true"><source src={xrLoop.src} type="video/mp4" /></video>
+        ? <video muted playsinline loop autoplay preload="auto" poster={xrLoop.poster} aria-hidden="true"><source src={xrLoop.src} type="video/mp4" /></video>
         : <canvas id="cv-xr" aria-hidden="true"></canvas>}
       <div class="meta">Unity · C# · Meta XR SDK · ARKit · WebXR<br />Quest 3 · passthrough · hand tracking · spatial UI</div>
       <div class="eyebrow">/xr</div>
@@ -20,7 +20,7 @@ const motionLoop = loops.motion ?? null;
     </a>
     <a class="panel panel--motion" href="/motion" data-side="motion" aria-label="Enter motion work">
       {motionLoop?.src
-        ? <video muted playsinline loop autoplay preload="none" poster={motionLoop.poster} aria-hidden="true"><source src={motionLoop.src} type="video/mp4" /></video>
+        ? <video muted playsinline loop autoplay preload="auto" poster={motionLoop.poster} aria-hidden="true"><source src={motionLoop.src} type="video/mp4" /></video>
         : <canvas id="cv-motion" aria-hidden="true"></canvas>}
       <div class="meta">After Effects · Illustrator · Figma<br />2D / 3D · 24 fps · 500+ videos shipped</div>
       <div class="eyebrow">/motion</div>

@@ -15,12 +15,12 @@
   },
   "loops": {
     "xr": {
-      "src": null,
-      "poster": null
+      "src": "/media/fork-xr.mp4",
+      "poster": "/media/fork-xr.jpg"
     },
     "motion": {
-      "src": null,
-      "poster": null
+      "src": "/media/fork-motion.mp4",
+      "poster": "/media/fork-motion.jpg"
     }
   }
 }
