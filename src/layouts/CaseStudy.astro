@@ -10,7 +10,7 @@ const { view, p, all } = Astro.props;
 const withPages = all.filter(x => x.desc);
 const next = withPages[(withPages.findIndex(x => x.slug === p.slug) + 1) % withPages.length];
 const heroUrl = p.youtube ? `https://youtu.be/${p.youtube}` : (p.vimeo ?? p.drive ?? null);
-const backLabel = view === 'xr' ? 'All XR & Product work' : 'All motion work';
+const backLabel = view === 'xr' ? 'All XR work' : 'All motion work';
 const cv = view === 'xr' ? { href: site.cv.xr, label: 'CV for XR and Unity roles' } : { href: site.cv.motion, label: 'CV for motion roles' };
 const wide = new Set<number>(p.galleryWide ?? []);
 ---

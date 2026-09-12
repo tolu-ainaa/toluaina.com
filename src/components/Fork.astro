@@ -8,7 +8,7 @@ const motionLoop = loops.motion ?? null;
 ---
 <div class="fork-wrap">
   <main class="fork" id="fork">
-    <a class="panel panel--xr" href="/xr" data-side="xr" aria-label="Enter XR and product work">
+    <a class="panel panel--xr" href="/xr" data-side="xr" aria-label="Enter XR work">
       {xrLoop?.src
         ? <video muted playsinline loop autoplay preload="auto" poster={xrLoop.poster} aria-hidden="true"><source src={xrLoop.src} type="video/mp4" /></video>
         : <canvas id="cv-xr" aria-hidden="true"></canvas>}
@@ -16,7 +16,7 @@ const motionLoop = loops.motion ?? null;
         {['Unity', 'C#', 'Meta XR SDK', 'ARKit', 'WebXR', 'Quest 3', 'passthrough', 'hand tracking', 'spatial UI'].map(t => <li>{t}</li>)}
       </ul>
       <div class="eyebrow">/xr</div>
-      <h2>XR &amp; Product</h2>
+      <h2>XR</h2>
       <p>Augmented, virtual and mixed reality in Unity and C#, for Meta Quest, iOS and the web. Real-time 3D, spatial UI, hand tracking and passthrough, with the product design to make it usable.</p>
       <span class="enter"><i></i> Enter the builds</span>
     </a>
