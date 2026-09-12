@@ -4,13 +4,20 @@
     "title": "PainPath",
     "subtitle": "Mixed reality pain reporting",
     "line": "Patients map their pain on a life-size 3D body with hand tracking, then send the report to their specialist. XRCC 2026 finalist.",
-    "tags": ["Mixed reality", "Quest 3"],
+    "tags": [
+      "Mixed reality",
+      "Quest 3"
+    ],
     "meta": "Unity · C# · Meta Quest · hand tracking",
     "year": "2026",
     "poster": "/media/projects/painpath.jpg",
     "loop": "/media/projects/painpath-loop.mp4",
     "youtube": "Ou1zA-DbUVw",
-    "gallery": ["/media/projects/painpath-2.jpg", "/media/projects/painpath-3.jpg", "/media/projects/painpath-4.jpg"],
+    "gallery": [
+      "/media/projects/painpath-2.jpg",
+      "/media/projects/painpath-3.jpg",
+      "/media/projects/painpath-4.jpg"
+    ],
     "desc": "A mixed reality app that lets patients show their pain instead of describing it. Using hand tracking on a headset, you place markers directly on a life-size 3D body, tag each one with a pain type and an intensity from mild to severe, then review and submit the result for your specialist to see before your appointment. Finalist at the XR Creator Challenge 2026.",
     "details": [
       "Hand-tracked marker placement directly on a life-size 3D body model",
@@ -18,17 +25,28 @@
       "Rotate, undo and multi-area flows so patients can map complex pain accurately",
       "A final review step summarises the report before it is submitted to the specialist"
     ],
-    "tools": ["Unity", "C#", "Meta Quest", "Hand Tracking"],
+    "tools": [
+      "Unity",
+      "C#",
+      "Meta Quest",
+      "Hand Tracking"
+    ],
     "challenge": "Pain is notoriously hard to communicate in words, and short consultations leave little time to unpack it. The interface had to be usable by patients with no XR experience, possibly in pain while using it.",
     "solution": "Kept every interaction to a single pinch or touch, anchored the UI to the room, and mirrored the clinical pain-scale language clinicians already use so the output slots straight into their workflow.",
-    "link": { "url": "https://youtu.be/Ou1zA-DbUVw", "label": "Watch the demo" }
+    "link": {
+      "url": "https://youtu.be/Ou1zA-DbUVw",
+      "label": "Watch the demo"
+    }
   },
   {
     "slug": "tictactoe",
     "title": "TicTacToe",
     "subtitle": "Hand-tracked WebXR game",
     "line": "Tic-tac-toe on a board anchored in your room, played by pinching. Runs from a browser link on a headset, nothing to install.",
-    "tags": ["WebXR", "Browser"],
+    "tags": [
+      "WebXR",
+      "Browser"
+    ],
     "meta": "IWSDK · WebXR · hand tracking",
     "year": "2026",
     "poster": "/media/projects/tictactoe.jpg",
@@ -42,15 +60,25 @@
       "The board is anchored in the room so players can move around it as they play",
       "Runs from a browser link, removing the install step that usually blocks quick demos"
     ],
-    "tools": ["IWSDK", "WebXR", "Hand Tracking"],
-    "link": { "url": "https://tictactoe-three-lovat.vercel.app/", "label": "Play it now" }
+    "tools": [
+      "IWSDK",
+      "WebXR",
+      "Hand Tracking"
+    ],
+    "link": {
+      "url": "https://tictactoe-three-lovat.vercel.app/",
+      "label": "Play it now"
+    }
   },
   {
     "slug": "arasteroids",
     "title": "ARAsteroids",
     "subtitle": "Augmented reality arcade game",
     "line": "Asteroids rebuilt in AR: rocks spawn on real surfaces and you shoot them out of your room. Also the basis of an MSc study on immersion.",
-    "tags": ["Mobile AR", "Research"],
+    "tags": [
+      "Mobile AR",
+      "Research"
+    ],
     "meta": "Unity · ARKit · ARCore · C#",
     "year": "2025",
     "poster": "/media/projects/arasteroids.jpg",
@@ -64,7 +92,13 @@
       "Progressive difficulty system with combo multipliers and score tracking",
       "Comparative user study on immersion, delivered as an MSc dissertation awarded Distinction"
     ],
-    "tools": ["Unity", "ARCore", "ARKit", "Blender", "C#"],
+    "tools": [
+      "Unity",
+      "ARCore",
+      "ARKit",
+      "Blender",
+      "C#"
+    ],
     "challenge": "Grounding fast-paced arcade gameplay in the real world. Asteroid trajectories needed to feel physically plausible while remaining fun and readable against any real-world background.",
     "solution": "Used plane detection and environment understanding to anchor gameplay to real surfaces, and designed high-contrast visual effects that remain legible regardless of background complexity."
   },
@@ -73,15 +107,24 @@
     "title": "Snap Lenses",
     "subtitle": "AR filter collection",
     "line": "Custom Snap AR lenses, from face effects to the full ARAsteroids game rebuilt inside the Snapchat camera. 121K+ views.",
-    "tags": ["Snap AR", "Shipped"],
+    "tags": [
+      "Snap AR",
+      "Shipped"
+    ],
     "meta": "Lens Studio · face and world tracking",
     "year": "2025 to 2026",
     "poster": "/media/projects/snap-lenses.jpg",
     "loop": "/media/projects/snap-lenses-loop.mp4",
     "video": "/media/projects/snap-lenses-loop.mp4",
     "extraLoops": [
-      { "src": "/media/projects/snap-arasteroids-loop.mp4", "label": "ARAsteroids Lens" },
-      { "src": "/media/projects/snap-mask-loop.mp4", "label": "Mask Lens" }
+      {
+        "src": "/media/projects/snap-arasteroids-loop.mp4",
+        "label": "ARAsteroids Lens"
+      },
+      {
+        "src": "/media/projects/snap-mask-loop.mp4",
+        "label": "Mask Lens"
+      }
     ],
     "desc": "A collection of custom Snap AR lenses that have accumulated over 121K views, blending playful interactivity and immersive face effects with brand storytelling.",
     "details": [
@@ -90,23 +133,37 @@
       "ARAsteroids lens brings the arcade game experience directly inside the Snapchat camera",
       "Face tracking, segmentation, world tracking and particle effects"
     ],
-    "tools": ["Lens Studio", "Snap AR", "After Effects", "Photoshop"],
+    "tools": [
+      "Lens Studio",
+      "Snap AR",
+      "After Effects",
+      "Photoshop"
+    ],
     "challenge": "Balancing visual complexity with the performance constraints of mobile devices while making the effects feel natural and engaging.",
     "solution": "Optimised shaders and efficient particle systems that run smoothly across devices, including the ARAsteroids gameplay mechanics rebuilt natively in Lens Studio.",
-    "link": { "url": "https://snapchat.com/t/1Li9r42g", "label": "Try on Snapchat" }
+    "link": {
+      "url": "https://snapchat.com/t/1Li9r42g",
+      "label": "Try on Snapchat"
+    }
   },
   {
     "slug": "vr-ludo",
     "title": "VR Ludo",
     "subtitle": "Virtual reality board game",
     "line": "The classic board game in a shared VR space for 2 to 4 players, with hands or controllers. In development.",
-    "tags": ["VR", "Multiplayer"],
+    "tags": [
+      "VR",
+      "Multiplayer"
+    ],
     "meta": "Unity · XR Interaction Toolkit · Photon",
     "year": "In progress",
     "poster": "/media/projects/vr-ludo.jpg",
     "loop": "/media/projects/vr-ludo-loop.mp4",
     "video": "/media/projects/vr-ludo-hero.mp4",
-    "gallery": ["/media/projects/vr-ludo-2.jpg", "/media/projects/vr-ludo-3.jpg"],
+    "gallery": [
+      "/media/projects/vr-ludo-2.jpg",
+      "/media/projects/vr-ludo-3.jpg"
+    ],
     "desc": "A fully immersive virtual reality adaptation of the classic board game Ludo, bringing friends together in a shared 3D space.",
     "details": [
       "Multiplayer VR board game supporting 2 to 4 players",
@@ -114,28 +171,13 @@
       "Hand tracking and controller support for intuitive interaction",
       "Spatial audio and ambient environments for an engaging experience"
     ],
-    "tools": ["Unity", "XR Interaction Toolkit", "Blender", "Photon"],
+    "tools": [
+      "Unity",
+      "XR Interaction Toolkit",
+      "Blender",
+      "Photon"
+    ],
     "challenge": "Creating intuitive controls for VR that feel natural while keeping the social essence of the original board game.",
     "solution": "Gesture-based interactions and spatial audio that create a sense of presence and connection between players."
-  },
-  {
-    "slug": "ratecardly",
-    "title": "RateCardly design system",
-    "subtitle": "Product design, sole designer",
-    "line": "Built the design system, tokens and illustration style for a SaaS rate-card platform as the only designer on the team.",
-    "tags": ["Product design", "Design system"],
-    "meta": "Figma · tokens · style guide",
-    "year": "2025 to 2026",
-    "poster": null,
-    "loop": null,
-    "glyph": "ds",
-    "desc": "Sole design lead for a SaaS product, owning end-to-end product design, UI, the design system and the component patterns the platform is built on.",
-    "details": [
-      "Built the design system from scratch: reusable UI components, typography and colour tokens, and documented usage rules",
-      "Designed core product interfaces and interaction patterns, working directly with development on implementation",
-      "Design token and component library adopted across product, marketing and brand",
-      "Supporting illustration system: flat geometric forms, human figures with natural movement, bold colour blocking with a signature yellow accent"
-    ],
-    "tools": ["Figma", "Design Systems", "Interaction Design"]
   }
 ]
