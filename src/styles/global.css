@@ -89,6 +89,10 @@ body[data-view="home"] { height: 100vh; height: 100dvh; overflow: hidden; }   /*
 .panel--motion { background: var(--yolk); color: var(--ink); --tint: var(--yolk); --tint-strength: .7; }
 .panel:has(> canvas) { --tint-strength: 0; }   /* canvas stand-ins are already in palette */
 .panel > :not(canvas):not(video) { transition: opacity .3s; }
+/* Safari (iPad) can leave text over a video + blend layer unpainted until something repaints;
+   promoting the copy to its own compositing layer makes it paint on load. */
+.panel > :not(canvas):not(video):not(.stack) { position: relative; z-index: 1; -webkit-transform: translateZ(0); transform: translateZ(0); }
+.panel .stack { -webkit-transform: translateZ(0); transform: translateZ(0); z-index: 1; }
 
 .panel .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; margin-bottom: 14px; }
 .panel h2 { font-family: var(--display); font-weight: 800; line-height: .92; letter-spacing: -.02em; font-size: clamp(44px, 7vw, 108px); margin: 0 0 18px; text-wrap: balance; }
