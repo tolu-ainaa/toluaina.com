@@ -15,7 +15,6 @@
     "youtube": "Ou1zA-DbUVw",
     "gallery": [
       "/media/projects/painpath-2.jpg",
-      "/media/projects/painpath-3.jpg",
       "/media/projects/painpath-4.jpg"
     ],
     "desc": "A mixed reality app that lets patients show their pain instead of describing it. Using hand tracking on a headset, you place markers directly on a life-size 3D body, tag each one with a pain type and an intensity from mild to severe, then review and submit the result for your specialist to see before your appointment. Finalist at the XR Creator Challenge 2026.",
