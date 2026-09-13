@@ -97,20 +97,20 @@ body[data-view="home"] { height: 100vh; height: 100dvh; overflow: hidden; }   /*
 .panel .enter { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
 .panel .enter i { display: inline-block; width: 28px; height: 1px; background: currentColor; transition: width var(--fork-ms) var(--ease-out); }
 .panel:hover .enter i { width: 52px; }
-/* the stack: chips below the header's frost band, each on its own dark backing so they read over any footage */
+/* the stack: one frosted strip of mono text below the header's frost band. A label, not a row of buttons. */
 .panel .stack {
   position: absolute; top: calc(var(--header-h) + 52px); left: 40px; right: 40px; margin: 0; padding: 0; list-style: none;
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.panel .stack li {
-  font-family: var(--mono); font-size: 11px; letter-spacing: .04em; padding: 5px 10px; border-radius: 999px;
-  background: rgba(21,18,14,.34);
+  display: inline-flex; flex-wrap: wrap; width: fit-content; max-width: calc(100% - 80px); align-items: baseline; gap: 0 1.25em;
+  padding: 9px 14px; border-radius: 6px; background: rgba(21,18,14,.3);
   -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; line-height: 1.9; pointer-events: none;
 }
-.panel--xr .stack li { color: var(--signal); background: rgba(12,18,34,.38); }
-.panel--motion .stack li { color: var(--yolk); }
-.panel--xr .stack li:nth-child(-n+5), .panel--motion .stack li:nth-child(-n+4) { color: var(--mist); }   /* tools bright, context quieter */
-.panel--motion .stack li:nth-child(-n+4) { color: var(--paper); }
+.panel .stack li { position: relative; color: var(--mist); }
+.panel .stack li + li::before { content: '·'; position: absolute; left: -.85em; opacity: .5; }
+.panel--xr .stack { background: rgba(12,18,34,.34); }
+.panel--xr .stack li:nth-child(n+6) { color: var(--signal); }      /* tools bright, context in the side's accent */
+.panel--motion .stack li { color: var(--paper); }
+.panel--motion .stack li:nth-child(n+5) { color: var(--yolk); }
 .seam-note { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); font-family: var(--mono); font-size: 11px; color: var(--mist); background: rgba(21,18,14,.55); padding: 4px 10px; border-radius: 999px; pointer-events: none; white-space: nowrap; }
 
 /* ---------- section pages ---------- */
