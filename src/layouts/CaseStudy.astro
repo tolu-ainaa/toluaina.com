@@ -90,6 +90,13 @@ const wide = new Set<number>(p.galleryWide ?? []);
       <div class="gallery">{p.gallery.map((g: string, i: number) => <img src={g} alt={`${p.title} still`} loading="lazy" decoding="async" class={wide.has(i) ? 'is-wide' : undefined} />)}</div>
     )}
 
+    {p.gallery2 && (
+      <>
+        {p.gallery2Note && <p class="gallery-note">{p.gallery2Note}</p>}
+        <div class="gallery gallery--event">{p.gallery2.map((g: string) => <img src={g} alt="" loading="lazy" decoding="async" />)}</div>
+      </>
+    )}
+
     <SectionFooter cvHref={cv.href} cvLabel={cv.label} showStudio={view === 'xr'} />
   </article>
 </Base>

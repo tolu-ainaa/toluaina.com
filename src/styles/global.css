@@ -392,3 +392,7 @@ body[data-view="home"][data-hover="motion"] { --cursor: var(--navy); }
 }
 .wave--corner { position: absolute; left: -22px; bottom: -18px; z-index: 2; filter: drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
 @media (prefers-reduced-motion: reduce) { .wave-hand, .wave:hover .wave-hand, .with-wave:hover .wave-hand, .portrait:hover .wave-hand { animation: none; } }
+.gallery-note { margin: 56px 0 -32px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; opacity: .7; }
+.gallery--event { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gallery--event img { aspect-ratio: 3 / 2; object-fit: cover; }
+@media (max-width: 860px) { .gallery--event { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
