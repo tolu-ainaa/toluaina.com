@@ -79,6 +79,38 @@
     }
   },
   {
+    "slug": "splat-tour",
+    "title": "Splat Tour",
+    "subtitle": "Guided tour of a Gaussian splat",
+    "line": "Walk through a photoreal scan of a nail salon in the browser, with named stops and notes pinned to the room.",
+    "tags": [
+      "Gaussian splat",
+      "Browser"
+    ],
+    "meta": "three.js · Spark · Gaussian splatting",
+    "year": "2026",
+    "poster": "/media/projects/splat-tour.jpg",
+    "playable": true,
+    "desc": "A guided walkthrough built on a Gaussian splat scan. You can look and walk around the room, jump between named stops from a menu, and open notes that appear as you get close to them. The scan itself is \"Milano, Little Nail Shop\" by Corridori Ruggero (CC BY-NC 4.0). The tour around it is my work: the navigation, the stop and hotspot system, and an editor built into the page for placing them.",
+    "details": [
+      "Drag to look and walk with the keyboard, or move between named stops from the menu and the Prev and Next controls",
+      "Hotspots placed in 3D: floor rings, info pins, and panels, cards and pop-ups that open as you get close",
+      "An authoring mode in the same page: walk to a spot, press a key to add a stop or a hotspot, then export the tour as JSON",
+      "The scene, stops and hotspots all come from one tour.json file, so a new scan becomes a new tour without code changes",
+      "Converted the 1.2 GB capture to a 68 MB SPZ file so it streams in the browser"
+    ],
+    "tools": [
+      "three.js",
+      "Spark",
+      "JavaScript",
+      "SuperSplat"
+    ],
+    "link": {
+      "url": "https://tour.toluaina.com/",
+      "label": "Walk the tour"
+    }
+  },
+  {
     "slug": "arasteroids",
     "title": "ARAsteroids",
     "subtitle": "Augmented reality arcade game",
